@@ -28,7 +28,7 @@ import * as THREE from "three";
 // it reading as structure — two strands of light — rather than as a glow blob.
 const COUNT = 2300;
 const TURNS = 3.5;
-const HEIGHT = 9.2;
+const HEIGHT = 8.1;
 const RADIUS = 1.95;
 
 function buildGeometry() {
