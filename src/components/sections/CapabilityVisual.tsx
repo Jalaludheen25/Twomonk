@@ -44,12 +44,16 @@ function Frame({ children }: { children: React.ReactNode }) {
       aria-hidden
       role="presentation"
     >
-      {/* Reference grid — keeps every motif sitting in the same space */}
+      {/* Reference crosshair — full-bleed, so it stays outside the scale group */}
       <g stroke={DIM} strokeWidth="1">
         <line x1="0" y1="200" x2="400" y2="200" strokeDasharray="2 8" />
         <line x1="200" y1="0" x2="200" y2="400" strokeDasharray="2 8" />
       </g>
-      {children}
+      {/* Motifs are drawn to a conservative safe area; scaling about the centre
+          lets them fill the frame without redrawing every set of coordinates. */}
+      <g transform="translate(200 200) scale(1.22) translate(-200 -200)">
+        {children}
+      </g>
     </svg>
   );
 }
@@ -245,7 +249,8 @@ function Grow() {
 }
 
 function Scale() {
-  const rings = [46, 84, 122, 160];
+  // Largest ring kept at 146 so the 1.22 frame scale doesn't clip it.
+  const rings = [42, 77, 112, 146];
   return (
     <Frame>
       {rings.map((r, i) => (
