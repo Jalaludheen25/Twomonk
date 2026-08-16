@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
  * Deliberately not a small rounded card in a grid: one project per row on
  * desktop, alternating which side the media sits on, so each piece of work
  * gets the space of a magazine spread. The cover scales inside a fixed frame
- * on hover — the frame stays put, so nothing reflows and neighbouring cards
+ * on hover — the frame stays put, so nothing reflows and neighbouring cards
  * don't shift.
  */
 export function ProjectCard({
@@ -52,7 +52,7 @@ export function ProjectCard({
               {project.cover ? (
                 <Image
                   src={project.cover}
-                  alt={`${project.name} — ${project.industry}`}
+                  alt={`${project.name} — ${project.industry}`}
                   width={1200}
                   height={750}
                   className="h-full w-full object-cover"
@@ -115,7 +115,7 @@ export function ProjectCard({
               aria-hidden
               className="inline-block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1"
             >
-              — 
+              →
             </span>
           </span>
         </div>

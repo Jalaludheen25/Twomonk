@@ -12,7 +12,7 @@ import { capabilities, brochureServices } from "@/data/services";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Software, web, mobile, e-commerce, design, AI and automation, SEO, digital marketing and technology consulting — one connected service ecosystem.",
+    "Software, web, mobile, e-commerce, design, AI and automation, SEO, digital marketing and technology consulting — one connected service ecosystem.",
   alternates: { canonical: "/services" },
 };
 
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
  * Services.
  *
  * The home page shows the ecosystem as a scroll narrative; this page is the
- * reference version — every capability area laid out in full, deep-linkable by
+ * reference version — every capability area laid out in full, deep-linkable by
  * anchor (`/services#intelligence`) so the nav and cards can point straight at
  * a section.
  */

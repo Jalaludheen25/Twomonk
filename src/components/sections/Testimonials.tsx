@@ -11,7 +11,7 @@ import { EASE, DURATION } from "@/lib/motion";
  *
  * Returns null when there are none. The brief forbids inventing client
  * quotes, and a "what our clients say" heading over fabricated praise is the
- * single most obvious tell of a template site — so the whole section stays out
+ * single most obvious tell of a template site — so the whole section stays out
  * of the page until real, permissioned quotes exist.
  *
  * Add entries to `testimonials` in src/data/people.ts and it appears.
@@ -44,7 +44,7 @@ export function Testimonials() {
                   “{t.quote}”
                 </p>
                 <footer className="mt-8 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-2">
-                  <span className="text-accent-text">{t.author}</span> — {t.role},{" "}
+                  <span className="text-accent-text">{t.author}</span> — {t.role},{" "}
                   {t.company}
                 </footer>
               </motion.blockquote>
@@ -69,7 +69,7 @@ export function Testimonials() {
                 data-cursor="hover"
                 className="flex h-11 w-11 items-center justify-center rounded-full border border-line transition-colors hover:border-accent hover:text-accent-text"
               >
-                — 
+                →
               </button>
             </div>
           ) : null}

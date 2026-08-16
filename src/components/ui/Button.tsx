@@ -11,7 +11,7 @@ const base =
   "group relative inline-flex items-center gap-3 rounded-full font-mono text-[11px] uppercase tracking-[0.16em] transition-colors duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]";
 
 const variants: Record<Variant, string> = {
-  // Teal fill, ink text — the single high-contrast action on any screen.
+  // Teal fill, ink text — the single high-contrast action on any screen.
   primary:
     "bg-accent px-7 py-4 text-ink hover:bg-paper focus-visible:bg-paper",
   outline:

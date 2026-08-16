@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 /**
  * Insights index.
  *
- * The architecture is complete — categories, article type, routing and
- * per-post pages all exist — but no articles are published, because inventing
+ * The architecture is complete — categories, article type, routing and
+ * per-post pages all exist — but no articles are published, because inventing
  * thought leadership would be worse than an honest empty state. Add entries to
  * `insights` in src/data/insights.ts and this page fills in.
  */
@@ -83,7 +83,7 @@ export default function InsightsPage() {
               </p>
               <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-muted">
                 We would rather publish nothing than publish filler. Writing is on
-                the way — in the meantime, the fastest way to get our thinking on
+                the way — in the meantime, the fastest way to get our thinking on
                 your problem is to ask.
               </p>
               <Link
@@ -91,7 +91,7 @@ export default function InsightsPage() {
                 data-cursor="hover"
                 className="mt-8 inline-block font-mono text-[11px] uppercase tracking-[0.16em] text-accent-text underline-offset-4 hover:underline"
               >
-                Ask us directly → 
+                Ask us directly →
               </Link>
 
               {process.env.NODE_ENV !== "production" ? (

@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
  * twenty-odd cards. That is the whole point: TwoMonk's portfolio is large, and
  * a flat grid of it would read as clutter instead of range.
  *
- * Desktop gets a pinned, scroll-driven experience — a rail of all five areas
+ * Desktop gets a pinned, scroll-driven experience — a rail of all five areas
  * on the left so the breadth is visible at a glance, the active area's detail
  * in the middle, and a generative visual on the right that changes with it.
  *
@@ -69,7 +69,7 @@ function PinnedEcosystem() {
           </div>
 
           <div className="mt-10 grid grid-cols-12 gap-8 xl:gap-12">
-            {/* Rail — the whole ecosystem stays visible */}
+            {/* Rail — the whole ecosystem stays visible */}
             <nav aria-label="Capability areas" className="col-span-3">
               <ul className="space-y-1">
                 {capabilities.map((c, i) => (
@@ -148,7 +148,7 @@ function PinnedEcosystem() {
                     data-cursor="hover"
                     className="mt-8 inline-block font-mono text-[11px] uppercase tracking-[0.16em] text-accent-text underline-offset-4 hover:underline"
                   >
-                    All {cap.name} services → 
+                    All {cap.name} services →
                   </Link>
                 </motion.div>
               </AnimatePresence>
@@ -278,7 +278,7 @@ function StackedEcosystem() {
                         href={`/services#${c.id}`}
                         className="mt-6 inline-block font-mono text-[11px] uppercase tracking-[0.16em] text-accent-text underline-offset-4 hover:underline"
                       >
-                        All {c.name} services → 
+                        All {c.name} services →
                       </Link>
                     </div>
                   </motion.div>

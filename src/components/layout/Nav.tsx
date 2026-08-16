@@ -28,7 +28,7 @@ export function Nav() {
   /*
    * The menu stores the route it was opened on rather than a boolean, so
    * navigating away closes it as a derived value. An effect watching
-   * `pathname` would do the same thing via an extra render pass — this needs
+   * `pathname` would do the same thing via an extra render pass — this needs
    * no effect at all.
    */
   const [openedOn, setOpenedOn] = useState<string | null>(null);
@@ -109,7 +109,7 @@ export function Nav() {
                         aria-current={active ? "page" : undefined}
                         className="group relative block overflow-hidden px-4 py-2 font-mono text-[11px] uppercase tracking-[0.16em]"
                       >
-                        {/* Two stacked copies slide vertically on hover —
+                        {/* Two stacked copies slide vertically on hover —
                             reads as one label rolling over. */}
                         <span
                           className={cn(
@@ -139,7 +139,7 @@ export function Nav() {
                 </Button>
               </div>
 
-              {/* Open control — visible below lg.
+              {/* Open control — visible below lg.
                   The close control lives inside the overlay instead: this
                   header is z-50 and the overlay is z-60, so a toggle left here
                   would be painted over and unclickable once the menu opened. */}

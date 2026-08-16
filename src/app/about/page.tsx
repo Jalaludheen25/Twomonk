@@ -19,7 +19,7 @@ export const metadata: Metadata = {
  * About.
  *
  * Copy here is taken from the official brochure wherever the brochure has a
- * position — mission and vision are verbatim, so the site and the sales
+ * position — mission and vision are verbatim, so the site and the sales
  * material never contradict each other.
  */
 export default function AboutPage() {
@@ -49,7 +49,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission & Vision — verbatim from the brochure */}
+      {/* Mission & Vision — verbatim from the brochure */}
       <section className="border-t border-line/50 py-20 sm:py-28">
         <div className="tm-shell grid gap-px overflow-hidden rounded-card bg-paper-line/60 md:grid-cols-2">
           {[
@@ -85,7 +85,7 @@ export default function AboutPage() {
               },
               {
                 h: "Technology serves the business.",
-                p: "Stack choices follow from what the system has to do and who has to maintain it — never the other way round.",
+                p: "Stack choices follow from what the system has to do and who has to maintain it — never the other way round.",
               },
               {
                 h: "Launch is the starting line.",

@@ -7,9 +7,9 @@ import { useHasFinePointer, usePrefersReducedMotion } from "@/hooks/useMediaQuer
  * Custom cursor: a small teal dot with a trailing ring.
  *
  * Elements opt into states declaratively via `data-cursor`:
- *   data-cursor="hover"  — ring expands
- *   data-cursor="view"   — ring expands and shows a label
- *   data-cursor="hidden" — cursor hides (e.g. over inputs)
+ *   data-cursor="hover"  — ring expands
+ *   data-cursor="view"   — ring expands and shows a label
+ *   data-cursor="hidden" — cursor hides (e.g. over inputs)
  * plus `data-cursor-label="View case"` to set the label text.
  *
  * Positioned with a rAF lerp on transform only, so it never triggers layout.

@@ -94,7 +94,7 @@ export default function ContactPage() {
                       {s.index}
                     </span>
                     <span>
-                      <span className="text-ink">{s.name}</span> — {s.summary}
+                      <span className="text-ink">{s.name}</span> — {s.summary}
                     </span>
                   </li>
                 ))}

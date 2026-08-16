@@ -41,7 +41,7 @@ export function TechEcosystem() {
           </div>
           <p className="text-[15px] leading-relaxed text-muted md:col-span-5">
             Platform choices are made per project, against what the system has to do
-            and who has to maintain it — not against fashion.
+            and who has to maintain it — not against fashion.
           </p>
         </div>
       </div>
