@@ -16,7 +16,8 @@ import { cn } from "@/lib/utils";
 export function LogoMark({
   className,
   size = 32,
-  variant = "white",
+  // Paper ground, so the full-colour navy + teal artwork is the default.
+  variant = "colour",
 }: {
   className?: string;
   size?: number;
@@ -40,7 +41,8 @@ export function LogoMark({
 export function LogoLockup({
   className,
   height = 56,
-  variant = "white",
+  // Paper ground, so the full-colour navy + teal artwork is the default.
+  variant = "colour",
 }: {
   className?: string;
   height?: number;
