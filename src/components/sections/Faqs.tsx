@@ -1,4 +1,4 @@
-﻿"use client";
+�"use client";
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
@@ -8,7 +8,7 @@ import { EASE } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 /**
- * FAQs â€” an accessible disclosure list.
+ * FAQs � an accessible disclosure list.
  *
  * Uses real buttons with aria-expanded/aria-controls rather than a
  * details/summary hack, so the open state is announced and the height

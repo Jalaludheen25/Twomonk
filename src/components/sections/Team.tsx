@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+�import Image from "next/image";
 import { Eyebrow } from "@/components/ui/Reveal";
 import { team, hasTeam, teamPlaceholderNote } from "@/data/people";
 import { site } from "@/data/site";
@@ -8,7 +8,7 @@ import { site } from "@/data/site";
  *
  * Renders real people when `src/data/people.ts` has them, and a written
  * statement when it doesn't. The brief rules out generic stock portraits, and
- * inventing faces for a company page would be worse than saying nothing â€” so
+ * inventing faces for a company page would be worse than saying nothing � so
  * the fallback is honest copy rather than five grey silhouettes.
  */
 export function Team() {
@@ -65,7 +65,7 @@ export function Team() {
                 {teamPlaceholderNote.body}
               </p>
               <p className="mt-6 font-mono text-[11px] uppercase leading-relaxed tracking-[0.14em] text-muted-2">
-                {site.contact.locations.join(" Â· ")}
+                {site.contact.locations.join(" · ")}
               </p>
               {process.env.NODE_ENV !== "production" ? (
                 <p className="mt-8 rounded-card border border-accent/30 bg-accent/[0.06] px-5 py-4 font-mono text-[11px] leading-relaxed text-accent-text">

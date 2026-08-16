@@ -1,4 +1,4 @@
-﻿"use client";
+�"use client";
 
 import { useEffect, useRef, useState } from "react";
 import { useHasFinePointer, usePrefersReducedMotion } from "@/hooks/useMediaQuery";
@@ -7,9 +7,9 @@ import { useHasFinePointer, usePrefersReducedMotion } from "@/hooks/useMediaQuer
  * Custom cursor: a small teal dot with a trailing ring.
  *
  * Elements opt into states declaratively via `data-cursor`:
- *   data-cursor="hover"  â€” ring expands
- *   data-cursor="view"   â€” ring expands and shows a label
- *   data-cursor="hidden" â€” cursor hides (e.g. over inputs)
+ *   data-cursor="hover"  � ring expands
+ *   data-cursor="view"   � ring expands and shows a label
+ *   data-cursor="hidden" � cursor hides (e.g. over inputs)
  * plus `data-cursor-label="View case"` to set the label text.
  *
  * Positioned with a rAF lerp on transform only, so it never triggers layout.
@@ -97,7 +97,7 @@ export function Cursor() {
           height: expanded ? 76 : 30,
           opacity: hidden ? 0 : 1,
           backgroundColor: expanded
-            ? "color-mix(in oklab, var(--color-teal-bright) 14%, transparent)"
+            ? "color-mix(in oklab, var(--color-accent) 16%, transparent)"
             : "transparent",
         }}
       >

@@ -20,8 +20,10 @@ import { EASE } from "@/lib/motion";
  * animate. Each remounts on capability change so the draw-on replays.
  */
 
-const STROKE = "var(--color-teal-bright)";
-const DIM = "color-mix(in oklab, var(--color-teal-bright) 26%, transparent)";
+const STROKE = "var(--color-ink)";
+const DIM = "color-mix(in oklab, var(--color-ink) 22%, transparent)";
+/** Fill used to knock nodes out of the lines behind them. */
+const KNOCKOUT = "var(--color-paper)";
 
 const draw = {
   hidden: { pathLength: 0, opacity: 0 },
@@ -130,7 +132,7 @@ function Design() {
           height="10"
           stroke={STROKE}
           strokeWidth="1.4"
-          fill="var(--color-ink)"
+          fill={KNOCKOUT}
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, ease: EASE.back, delay: 0.5 + i * 0.07 }}
@@ -184,7 +186,7 @@ function Intelligence() {
           r={i === 5 ? 13 : 7}
           stroke={STROKE}
           strokeWidth="1.4"
-          fill="var(--color-ink)"
+          fill={KNOCKOUT}
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, ease: EASE.back, delay: 0.35 + i * 0.06 }}
@@ -292,7 +294,7 @@ function Scale() {
         rx="5"
         stroke={STROKE}
         strokeWidth="1.6"
-        fill="var(--color-ink)"
+        fill={KNOCKOUT}
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.6, ease: EASE.back, delay: 0.42 }}

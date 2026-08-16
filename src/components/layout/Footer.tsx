@@ -1,11 +1,11 @@
-﻿import Link from "next/link";
+�import Link from "next/link";
 import { LogoLockup } from "@/components/ui/Logo";
 import { site, footerNav, capabilityStrip } from "@/data/site";
 
 /**
  * Footer.
  *
- * Opens with an oversized wordmark that bleeds to the page edges â€” the last
+ * Opens with an oversized wordmark that bleeds to the page edges � the last
  * thing on screen is the brand at scale, which is where the reference sites
  * spend their final impression too.
  *
@@ -19,13 +19,13 @@ export function Footer() {
       <div className="tm-grain-layer" aria-hidden />
 
       <div className="tm-shell relative pt-20 sm:pt-28">
-        {/* Capability strip â€” confirmed brochure footer line */}
+        {/* Capability strip � confirmed brochure footer line */}
         <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-line/60 pb-8 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-2">
           {capabilityStrip.map((c) => (
             <li key={c} className="flex items-center gap-5">
               <span>{c}</span>
               <span aria-hidden className="text-muted-2">
-                Â·
+                ·
               </span>
             </li>
           ))}
@@ -118,10 +118,10 @@ export function Footer() {
 
         <div className="flex flex-col gap-3 border-t border-line/60 py-7 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-2">
-            Â© {year} {site.name}
+            © {year} {site.name}
           </p>
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-2">
-            {site.contact.locations.join(" Â· ")}
+            {site.contact.locations.join(" · ")}
           </p>
         </div>
       </div>

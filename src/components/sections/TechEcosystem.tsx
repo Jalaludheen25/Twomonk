@@ -1,4 +1,4 @@
-﻿"use client";
+�"use client";
 
 import { useState } from "react";
 import { motion } from "motion/react";
@@ -41,7 +41,7 @@ export function TechEcosystem() {
           </div>
           <p className="text-[15px] leading-relaxed text-muted md:col-span-5">
             Platform choices are made per project, against what the system has to do
-            and who has to maintain it â€” not against fashion.
+            and who has to maintain it � not against fashion.
           </p>
         </div>
       </div>
@@ -111,7 +111,7 @@ function FilterChip({
         "relative rounded-full border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] transition-colors duration-300",
         active
           ? "border-accent text-ink"
-          : "border-line text-muted hover:border-fog-dim hover:text-ink",
+          : "border-line text-muted hover:border-line-strong hover:text-ink",
       )}
     >
       {active ? (

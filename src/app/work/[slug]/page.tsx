@@ -54,7 +54,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
         <Link
           href="/work"
           data-cursor="hover"
-          className="font-mono text-[11px] uppercase tracking-[0.16em] text-fog-dim transition-colors hover:text-teal-bright"
+          className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-2 transition-colors hover:text-accent-text"
         >
           ← All work
         </Link>
@@ -62,7 +62,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
         <div className="mt-10 grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
             {project.isPlaceholder ? (
-              <span className="mb-5 inline-block rounded-full border border-teal-bright/40 px-3 py-1.5 font-mono text-[9px] uppercase tracking-[0.16em] text-teal-bright">
+              <span className="mb-5 inline-block rounded-full border border-accent/40 px-3 py-1.5 font-mono text-[9px] uppercase tracking-[0.16em] text-accent-text">
                 Placeholder case study
               </span>
             ) : null}
@@ -71,14 +71,14 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
             </h1>
           </div>
           <div className="lg:col-span-4">
-            <p className="text-[15px] leading-relaxed text-fog">{project.summary}</p>
+            <p className="text-[15px] leading-relaxed text-muted">{project.summary}</p>
           </div>
         </div>
       </section>
 
       {/* Cover */}
       <section className="tm-shell">
-        <div className="aspect-[16/9] w-full overflow-hidden rounded-card border border-ink-line/70">
+        <div className="aspect-[16/9] w-full overflow-hidden rounded-card border border-line/70">
           {project.cover ? (
             <Image
               src={project.cover}
@@ -101,7 +101,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
 
       {/* Facts */}
       <section className="tm-shell py-16">
-        <dl className="grid gap-8 border-y border-ink-line/60 py-10 sm:grid-cols-2 lg:grid-cols-4">
+        <dl className="grid gap-8 border-y border-line/60 py-10 sm:grid-cols-2 lg:grid-cols-4">
           <Fact label="Industry" value={project.industry} />
           <Fact label="Year" value={project.year} />
           <Fact label="Services" value={project.services.join(" · ")} />
@@ -112,7 +112,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
           <div className="lg:col-span-4">
             <Eyebrow>Overview</Eyebrow>
           </div>
-          <p className="text-lead leading-relaxed text-fog lg:col-span-8">
+          <p className="text-lead leading-relaxed text-muted lg:col-span-8">
             {project.caseStudy.overview}
           </p>
         </div>
@@ -122,12 +122,12 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
       <section className="tm-shell pb-16">
         {project.caseStudy.sections.map((s) => (
           <Reveal key={s.heading}>
-            <div className="grid gap-8 border-t border-ink-line/60 py-12 lg:grid-cols-12">
+            <div className="grid gap-8 border-t border-line/60 py-12 lg:grid-cols-12">
               <h2 className="font-display text-h3 font-semibold lg:col-span-4">
                 {s.heading}
               </h2>
               <div className="lg:col-span-8">
-                <p className="max-w-2xl text-[16px] leading-relaxed text-fog">
+                <p className="max-w-2xl text-[16px] leading-relaxed text-muted">
                   {s.body}
                 </p>
                 {s.points ? (
@@ -135,9 +135,9 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
                     {s.points.map((p) => (
                       <li
                         key={p}
-                        className="flex gap-3 text-[15px] leading-relaxed text-fog-dim"
+                        className="flex gap-3 text-[15px] leading-relaxed text-muted-2"
                       >
-                        <span aria-hidden className="text-teal-bright">
+                        <span aria-hidden className="text-accent-text">
                           —
                         </span>
                         {p}
@@ -151,17 +151,17 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
         ))}
 
         {/* Outcome */}
-        <div className="grid gap-8 border-t border-ink-line/60 py-12 lg:grid-cols-12">
+        <div className="grid gap-8 border-t border-line/60 py-12 lg:grid-cols-12">
           <h2 className="font-display text-h3 font-semibold lg:col-span-4">Outcome</h2>
           <div className="lg:col-span-8">
-            <p className="text-lead leading-relaxed text-paper">{project.outcome}</p>
+            <p className="text-lead leading-relaxed text-ink">{project.outcome}</p>
             <ul className="mt-7 space-y-3">
               {project.caseStudy.results.map((r) => (
                 <li
                   key={r}
-                  className="flex gap-3 border-t border-ink-line/60 pt-3 text-[15px] text-fog"
+                  className="flex gap-3 border-t border-line/60 pt-3 text-[15px] text-muted"
                 >
-                  <span aria-hidden className="text-teal-bright">
+                  <span aria-hidden className="text-accent-text">
                     →
                   </span>
                   {r}
@@ -174,7 +174,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
 
       {/* Next project */}
       {next.slug !== project.slug ? (
-        <section className="tm-shell border-t border-ink-line/50 py-14">
+        <section className="tm-shell border-t border-line/50 py-14">
           <Link
             href={`/work/${next.slug}`}
             data-cursor="view"
@@ -182,16 +182,16 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
             className="group flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between"
           >
             <span>
-              <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-fog-dim">
+              <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-2">
                 Next project
               </span>
-              <span className="mt-3 block font-display text-h3 font-semibold transition-colors group-hover:text-teal-bright">
+              <span className="mt-3 block font-display text-h3 font-semibold transition-colors group-hover:text-accent-text">
                 {next.name}
               </span>
             </span>
             <span
               aria-hidden
-              className="font-mono text-[11px] uppercase tracking-[0.16em] text-teal-bright transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1"
+              className="font-mono text-[11px] uppercase tracking-[0.16em] text-accent-text transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1"
             >
               →
             </span>
@@ -207,10 +207,10 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
 function Fact({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <dt className="font-mono text-[10px] uppercase tracking-[0.16em] text-fog-dim">
+      <dt className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-2">
         {label}
       </dt>
-      <dd className="mt-2.5 text-[15px] leading-relaxed text-paper">{value}</dd>
+      <dd className="mt-2.5 text-[15px] leading-relaxed text-ink">{value}</dd>
     </div>
   );
 }

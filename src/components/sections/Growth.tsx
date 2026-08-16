@@ -1,4 +1,4 @@
-﻿"use client";
+�"use client";
 
 import { motion } from "motion/react";
 import { Eyebrow } from "@/components/ui/Reveal";
@@ -9,7 +9,7 @@ import { EASE, DURATION, viewportOnce } from "@/lib/motion";
  * Digital growth.
  *
  * Drawn as a loop rather than a line: Optimise feeds back into Build, which is
- * the actual argument â€” launch is the start of the work, not the end of it.
+ * the actual argument � launch is the start of the work, not the end of it.
  *
  * The metrics row names the *kinds* of number TwoMonk reports against and
  * deliberately carries no figures. Inventing "300% growth" here would be the
@@ -52,7 +52,7 @@ export function Growth() {
                   className="font-mono text-[13px] text-line"
                   title={i === growthLoop.length - 1 ? "back to Build" : undefined}
                 >
-                  {i === growthLoop.length - 1 ? "â†º" : "â†’"}
+                  {i === growthLoop.length - 1 ? "� �" : "� "}
                 </span>
               </div>
               <h3 className="mt-5 font-display text-2xl font-semibold text-ink">
@@ -64,7 +64,7 @@ export function Growth() {
         </ol>
 
         <p className="mt-5 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-2">
-          Optimise feeds back into build â€” it is a loop, not a line.
+          Optimise feeds back into build � it is a loop, not a line.
         </p>
 
         {/* What we measure */}

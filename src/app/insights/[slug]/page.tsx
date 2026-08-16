@@ -49,13 +49,13 @@ export default async function InsightPage({ params }: PageProps<"/insights/[slug
           <Link
             href="/insights"
             data-cursor="hover"
-            className="font-mono text-[11px] uppercase tracking-[0.16em] text-fog-dim transition-colors hover:text-teal-bright"
+            className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-2 transition-colors hover:text-accent-text"
           >
             ← All insights
           </Link>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4 font-mono text-[10px] uppercase tracking-[0.16em] text-fog-dim">
-            <span className="text-teal-bright">{post.category}</span>
+          <div className="mt-8 flex flex-wrap items-center gap-4 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-2">
+            <span className="text-accent-text">{post.category}</span>
             <time dateTime={post.date}>
               {new Date(post.date).toLocaleDateString("en-GB", {
                 day: "numeric",
@@ -69,13 +69,13 @@ export default async function InsightPage({ params }: PageProps<"/insights/[slug
           <h1 className="tm-optical-display mt-6 max-w-[20ch] font-display text-h1 font-semibold">
             {post.title}
           </h1>
-          <p className="mt-7 max-w-2xl text-lead text-fog">{post.excerpt}</p>
+          <p className="mt-7 max-w-2xl text-lead text-muted">{post.excerpt}</p>
         </header>
 
         <div className="tm-shell pb-16">
-          <div className="max-w-2xl space-y-6 border-t border-ink-line/60 pt-10">
+          <div className="max-w-2xl space-y-6 border-t border-line/60 pt-10">
             {post.body.map((para, i) => (
-              <p key={i} className="text-[17px] leading-[1.75] text-fog">
+              <p key={i} className="text-[17px] leading-[1.75] text-muted">
                 {para}
               </p>
             ))}

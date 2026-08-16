@@ -1,4 +1,4 @@
-﻿"use client";
+�"use client";
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
@@ -13,7 +13,7 @@ import { EASE, DURATION } from "@/lib/motion";
  *
  * Structure, from the top: a small locator rail, the headline set as
  * mask-revealed lines at editorial scale, the supporting line and actions, and
- * a bottom rail carrying the IDEA â†’ GROWTH sequence that the whole site is
+ * a bottom rail carrying the IDEA �  GROWTH sequence that the whole site is
  * organised around.
  *
  * The headline lands one line at a time on an expo-out curve. The 3D form sits
@@ -49,11 +49,11 @@ export function Hero() {
           transition={{ duration: DURATION.slow, ease: EASE.expo, delay: 0.15 }}
           className="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.16em] text-muted-2"
         >
-          <span>{site.contact.locations.join(" Â· ")}</span>
+          <span>{site.contact.locations.join(" · ")}</span>
           <span className="hidden sm:block">{site.tagline}</span>
         </motion.div>
 
-        {/* Headline â€” capped so it never runs under the visual on the right */}
+        {/* Headline � capped so it never runs under the visual on the right */}
         <div className="flex flex-1 flex-col justify-center py-10 sm:py-14">
           <h1 className="tm-optical-display max-w-[16ch] font-display text-display font-semibold text-ink lg:max-w-[13ch]">
             <Line delay={0.3}>
@@ -79,7 +79,7 @@ export function Hero() {
               transition={{ duration: DURATION.slow, ease: EASE.expo, delay: 0.84 }}
               className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center md:col-span-6 md:justify-end lg:col-span-7"
             >
-              {/* Full-width stacked on phones â€” equal-width targets read as a
+              {/* Full-width stacked on phones � equal-width targets read as a
                   deliberate pair rather than two mismatched pills. */}
               <Button href="/contact" className="justify-center">
                 Start a Project
@@ -92,7 +92,7 @@ export function Hero() {
         </div>
       </motion.div>
 
-      {/* Bottom rail â€” the sequence the whole site is built around */}
+      {/* Bottom rail � the sequence the whole site is built around */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+�import type { Metadata } from "next";
 import { PageHero } from "@/components/layout/PageHero";
 import { Team } from "@/components/sections/Team";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
  * About.
  *
  * Copy here is taken from the official brochure wherever the brochure has a
- * position â€” mission and vision are verbatim, so the site and the sales
+ * position � mission and vision are verbatim, so the site and the sales
  * material never contradict each other.
  */
 export default function AboutPage() {
@@ -49,7 +49,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission & Vision â€” verbatim from the brochure */}
+      {/* Mission & Vision � verbatim from the brochure */}
       <section className="border-t border-line/50 py-20 sm:py-28">
         <div className="tm-shell grid gap-px overflow-hidden rounded-card bg-paper-line/60 md:grid-cols-2">
           {[
@@ -85,7 +85,7 @@ export default function AboutPage() {
               },
               {
                 h: "Technology serves the business.",
-                p: "Stack choices follow from what the system has to do and who has to maintain it â€” never the other way round.",
+                p: "Stack choices follow from what the system has to do and who has to maintain it � never the other way round.",
               },
               {
                 h: "Launch is the starting line.",
@@ -126,7 +126,7 @@ export default function AboutPage() {
                 </span>
                 <h3 className="mt-4 font-display text-xl font-semibold">{c.name}</h3>
                 <p className="mt-3 text-[13px] leading-relaxed text-muted-2">
-                  {c.summary.join(" Â· ")}
+                  {c.summary.join(" · ")}
                 </p>
               </li>
             ))}

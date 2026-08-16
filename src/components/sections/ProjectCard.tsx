@@ -1,4 +1,4 @@
-﻿"use client";
+�"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
  * Deliberately not a small rounded card in a grid: one project per row on
  * desktop, alternating which side the media sits on, so each piece of work
  * gets the space of a magazine spread. The cover scales inside a fixed frame
- * on hover â€” the frame stays put, so nothing reflows and neighbouring cards
+ * on hover � the frame stays put, so nothing reflows and neighbouring cards
  * don't shift.
  */
 export function ProjectCard({
@@ -52,7 +52,7 @@ export function ProjectCard({
               {project.cover ? (
                 <Image
                   src={project.cover}
-                  alt={`${project.name} â€” ${project.industry}`}
+                  alt={`${project.name} � ${project.industry}`}
                   width={1200}
                   height={750}
                   className="h-full w-full object-cover"
@@ -82,7 +82,7 @@ export function ProjectCard({
               {String(index + 1).padStart(2, "0")}
             </span>
             <span>{project.industry}</span>
-            <span aria-hidden>Â·</span>
+            <span aria-hidden>·</span>
             <span>{project.year}</span>
           </div>
 
@@ -99,13 +99,13 @@ export function ProjectCard({
               <dt className="w-20 shrink-0 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-2">
                 Services
               </dt>
-              <dd className="text-muted">{project.services.join(" Â· ")}</dd>
+              <dd className="text-muted">{project.services.join(" · ")}</dd>
             </div>
             <div className="flex gap-3">
               <dt className="w-20 shrink-0 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-2">
                 Stack
               </dt>
-              <dd className="text-muted">{project.technologies.join(" Â· ")}</dd>
+              <dd className="text-muted">{project.technologies.join(" · ")}</dd>
             </div>
           </dl>
 
@@ -115,7 +115,7 @@ export function ProjectCard({
               aria-hidden
               className="inline-block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1"
             >
-              â†’
+              � 
             </span>
           </span>
         </div>

@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+�import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 /**
  * Brand marks.
  *
- * These use the official artwork rather than a re-drawn approximation â€” the
+ * These use the official artwork rather than a re-drawn approximation � the
  * mark is two monk figures (navy + teal) standing side by side, and that
  * "partner beside you" reading is the core of the identity. Files live in
  * /public/logos and were cropped from the supplied master PNGs.
@@ -22,7 +22,7 @@ export function LogoMark({
   size?: number;
   variant?: "white" | "colour" | "black";
 }) {
-  // Mark artwork is 1648 Ã— 2053 â†’ aspect 0.803
+  // Mark artwork is 1648 � 2053 �  aspect 0.803
   const width = Math.round(size * 0.803);
   return (
     <Image
@@ -46,7 +46,7 @@ export function LogoLockup({
   height?: number;
   variant?: "white" | "colour" | "black";
 }) {
-  // Full lockup is 3928 Ã— 2053 â†’ aspect 1.913
+  // Full lockup is 3928 � 2053 �  aspect 1.913
   const width = Math.round(height * 1.913);
   return (
     <Image
@@ -70,7 +70,7 @@ export function LogoLink({
   return (
     <Link
       href="/"
-      aria-label={`${site.name} â€” home`}
+      aria-label={`${site.name} � home`}
       data-cursor="hover"
       className={cn("group flex items-center gap-3", className)}
     >
