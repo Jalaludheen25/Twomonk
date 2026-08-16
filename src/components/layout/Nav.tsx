@@ -128,27 +128,22 @@ export function Nav() {
                 </Button>
               </div>
 
-              {/* Menu toggle — visible below lg */}
+              {/* Open control — visible below lg.
+                  The close control lives inside the overlay instead: this
+                  header is z-50 and the overlay is z-60, so a toggle left here
+                  would be painted over and unclickable once the menu opened. */}
               <button
                 type="button"
-                onClick={() => setOpen((v) => !v)}
+                onClick={() => setOpen(true)}
                 aria-expanded={open}
                 aria-controls="mobile-menu"
                 data-cursor="hover"
-                className="relative z-[70] flex h-11 w-11 items-center justify-center rounded-full border border-ink-line text-paper lg:hidden"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-ink-line text-paper lg:hidden"
               >
-                <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
-                <span className="relative block h-3 w-5">
-                  <motion.span
-                    animate={open ? { rotate: 45, y: 5 } : { rotate: 0, y: 0 }}
-                    transition={{ duration: DURATION.fast, ease: EASE.swift }}
-                    className="absolute left-0 top-0 block h-px w-5 bg-current"
-                  />
-                  <motion.span
-                    animate={open ? { rotate: -45, y: -5 } : { rotate: 0, y: 0 }}
-                    transition={{ duration: DURATION.fast, ease: EASE.swift }}
-                    className="absolute bottom-0 left-0 block h-px w-5 bg-current"
-                  />
+                <span className="sr-only">Open menu</span>
+                <span aria-hidden className="relative block h-3 w-5">
+                  <span className="absolute left-0 top-0 block h-px w-5 bg-current" />
+                  <span className="absolute bottom-0 left-0 block h-px w-5 bg-current" />
                 </span>
               </button>
             </div>
@@ -161,13 +156,35 @@ export function Nav() {
         {open ? (
           <motion.div
             id="mobile-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Site menu"
             initial={{ clipPath: "inset(0 0 100% 0)" }}
             animate={{ clipPath: "inset(0 0 0% 0)" }}
             exit={{ clipPath: "inset(0 0 100% 0)" }}
             transition={{ duration: 0.7, ease: EASE.expo }}
-            className="fixed inset-0 z-[60] flex flex-col bg-ink-deep lg:hidden"
+            className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-ink-deep lg:hidden"
           >
-            <div className="tm-shell flex flex-1 flex-col pb-10 pt-28">
+            {/* Menu's own header: keeps the brand visible and carries the
+                close control inside the overlay's stacking context. */}
+            <div className="tm-shell flex shrink-0 items-center justify-between pt-6">
+              <LogoLink />
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                data-cursor="hover"
+                autoFocus
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-ink-line text-paper transition-colors hover:border-teal-bright hover:text-teal-bright"
+              >
+                <span className="sr-only">Close menu</span>
+                <span aria-hidden className="relative block h-4 w-4">
+                  <span className="absolute left-0 top-1/2 block h-px w-4 -translate-y-1/2 rotate-45 bg-current" />
+                  <span className="absolute left-0 top-1/2 block h-px w-4 -translate-y-1/2 -rotate-45 bg-current" />
+                </span>
+              </button>
+            </div>
+
+            <div className="tm-shell flex flex-1 flex-col pb-10 pt-12">
               <nav aria-label="Mobile" className="flex-1">
                 <ul>
                   {primaryNav.map((item, i) => (

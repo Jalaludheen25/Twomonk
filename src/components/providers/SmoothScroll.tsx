@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MotionConfig } from "motion/react";
 import { usePrefersReducedMotion } from "@/hooks/useMediaQuery";
 
 /**
@@ -41,5 +42,11 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     };
   }, [reduced]);
 
-  return <>{children}</>;
+  /*
+   * `reducedMotion="user"` makes Motion drop transform and layout animations
+   * for users who ask for reduced motion, while still running opacity — the
+   * CSS override in globals.css can't reach JS-driven animations, so without
+   * this the page would keep sliding things around.
+   */
+  return <MotionConfig reducedMotion="user">{children}</MotionConfig>;
 }
