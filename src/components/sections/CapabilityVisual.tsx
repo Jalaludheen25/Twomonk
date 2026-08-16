@@ -248,6 +248,22 @@ function Grow() {
   );
 }
 
+/**
+ * Spoke endpoints, rounded to 2dp at module scope.
+ *
+ * Math.sin/cos precision is implementation-defined, so Node and V8-in-Chrome
+ * disagree on the final float digit — enough for React to flag a hydration
+ * mismatch on every render. Rounding makes the markup byte-identical on both
+ * sides. (Anything trig- or random-derived in SSR'd markup needs this.)
+ */
+const SPOKES: [number, number][] = [0, 60, 120, 180, 240, 300].map((deg) => {
+  const rad = (deg * Math.PI) / 180;
+  return [
+    Math.round((200 + Math.cos(rad) * 146) * 100) / 100,
+    Math.round((200 + Math.sin(rad) * 146) * 100) / 100,
+  ];
+});
+
 function Scale() {
   // Largest ring kept at 146 so the 1.22 frame scale doesn't clip it.
   const rings = [42, 77, 112, 146];
@@ -282,13 +298,13 @@ function Scale() {
         transition={{ duration: 0.6, ease: EASE.back, delay: 0.42 }}
         style={{ transformOrigin: "200px 200px" }}
       />
-      {[0, 60, 120, 180, 240, 300].map((deg, i) => (
+      {SPOKES.map(([x2, y2], i) => (
         <motion.line
-          key={deg}
+          key={i}
           x1="200"
           y1="200"
-          x2={200 + Math.cos((deg * Math.PI) / 180) * 160}
-          y2={200 + Math.sin((deg * Math.PI) / 180) * 160}
+          x2={x2}
+          y2={y2}
           stroke={DIM}
           strokeWidth="1"
           variants={draw}

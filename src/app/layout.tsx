@@ -6,6 +6,7 @@ import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { Cursor } from "@/components/ui/Cursor";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
+import { StructuredData } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -53,6 +54,9 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${fontVariables} antialiased`}>
+      <head>
+        <StructuredData />
+      </head>
       <body className="min-h-screen bg-ink font-body text-paper">
         <SmoothScroll>
           <Cursor />
