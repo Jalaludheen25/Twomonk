@@ -133,7 +133,7 @@ function PinnedEcosystem() {
                   <dl className="mt-8 space-y-4 border-t border-line/60 pt-6">
                     {cap.groups.map((g) => (
                       <div key={g.name} className="grid grid-cols-12 gap-3">
-                        <dt className="col-span-4 font-mono text-[10px] uppercase leading-relaxed tracking-[0.14em] text-accent-text/80">
+                        <dt className="col-span-4 font-mono text-[10px] uppercase leading-relaxed tracking-[0.14em] text-accent-text">
                           {g.name}
                         </dt>
                         <dd className="col-span-8 text-[13px] leading-relaxed text-muted-2">
@@ -264,7 +264,7 @@ function StackedEcosystem() {
                       <dl className="space-y-4">
                         {c.groups.map((g) => (
                           <div key={g.name}>
-                            <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-accent-text/80">
+                            <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-accent-text">
                               {g.name}
                             </dt>
                             <dd className="mt-1.5 text-[13px] leading-relaxed text-muted-2">

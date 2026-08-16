@@ -148,7 +148,7 @@ function Submit() {
 }
 
 const inputBase =
-  "w-full rounded-xl border bg-surface/60 px-4 py-3.5 text-[15px] text-ink placeholder:text-muted-2/70 transition-colors duration-300 focus:border-accent focus:outline-none";
+  "w-full rounded-xl border bg-surface/60 px-4 py-3.5 text-[15px] text-ink placeholder:text-muted-2 transition-colors duration-300 focus:border-accent focus:outline-none";
 
 /** Shared label + error scaffolding for every control. */
 function FieldShell({
