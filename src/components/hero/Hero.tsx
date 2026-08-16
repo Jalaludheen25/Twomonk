@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowDown } from "lucide-react";
 import { HeroVisual } from "./HeroVisual";
+import { WordReveal } from "./WordReveal";
 import { Button } from "@/components/ui/Button";
 import { site } from "@/data/site";
 import { EASE, DURATION } from "@/lib/motion";
@@ -56,10 +57,17 @@ export function Hero() {
         {/* Headline — capped so it never runs under the visual on the right */}
         <div className="flex flex-1 flex-col justify-center py-10 sm:py-14">
           <h1 className="tm-optical-display max-w-[16ch] font-display text-display font-semibold text-ink lg:max-w-[13ch]">
-            <Line delay={0.3}>
-              Ideas that <span className="tm-accent">move</span>.
-            </Line>
-            <Line delay={0.42}>Technology that delivers.</Line>
+            <WordReveal
+              text="Ideas that move."
+              accent="move"
+              delay={0.25}
+              className="block"
+            />
+            <WordReveal
+              text="Technology that delivers."
+              delay={0.45}
+              className="block"
+            />
           </h1>
 
           <div className="mt-9 grid gap-8 sm:mt-12 md:grid-cols-12 md:items-end">
