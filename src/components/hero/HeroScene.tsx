@@ -140,7 +140,7 @@ const fragmentShader = /* glsl */ `
     // on a dark canvas but is worthless here — adding light to near-white
     // paper produces white, so the whole form would vanish.) Points nearer the
     // camera are more opaque, which is what carries the depth read.
-    gl_FragColor = vec4(vColor, alpha * mix(0.10, 0.62, vFade));
+    gl_FragColor = vec4(vColor, alpha * mix(0.14, 0.80, vFade));
   }
 `;
 
@@ -176,7 +176,7 @@ function Strands({ pointer }: { pointer: React.RefObject<{ x: number; y: number 
 
     // gl_PointSize is in device pixels, so scale by DPR to keep the apparent
     // size identical on retina and non-retina displays.
-    m.uniforms.uSize.value = (size.width < 640 ? 2.6 : 3.6) * viewport.dpr;
+    m.uniforms.uSize.value = (size.width < 640 ? 2.8 : 4.0) * viewport.dpr;
   });
 
   return (
