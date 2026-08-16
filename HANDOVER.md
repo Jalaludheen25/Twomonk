@@ -119,10 +119,27 @@ idea rising into growth.
 
 ### Verified in-browser
 
-Desktop 1440×900 and mobile 390×844: no horizontal overflow on any route,
-zero console errors, zero page errors. All nine routes return 200 with unique
-titles, descriptions and canonicals, exactly one `<h1>` each, and no image
-missing `alt`.
+Driven through a real Chromium session (`agent-browser`), not assumed.
+
+**Responsive sweep — 30 combinations, zero horizontal overflow:**
+
+| Viewport | `/` | `/services` | `/work` | `/about` | `/contact` |
+|---|---|---|---|---|---|
+| 4K 3840×2160 | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Desktop 1920×1080 | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Laptop 1280×800 | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Tablet 768×1024 | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Mobile 390×844 | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Small 320×568 | ✓ | ✓ | ✓ | ✓ | ✓ |
+
+**Also verified:** zero console/page errors · no hydration mismatches ·
+reduced-motion drops WebGL and Lenis while leaving all content at opacity 1 ·
+mobile menu opens, traps scroll, closes via button and Escape ·
+all 9 routes 200 with unique title/description/canonical, exactly one `<h1>`,
+zero images missing `alt` · `next build` and `eslint` both clean.
+
+**Not done:** no Lighthouse run, and no testing on real hardware or in
+Safari/Firefox — everything above is Chromium at simulated viewports.
 
 ---
 
