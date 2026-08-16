@@ -37,14 +37,15 @@ function buildGeometry() {
   const seeds = new Float32Array(COUNT);
   const scales = new Float32Array(COUNT);
 
-  // Strand A — teal → cyan (the accent figure)
-  const a1 = new THREE.Color("#009f9d");
-  const a2 = new THREE.Color("#6ff0ea");
-  // Strand B — deep brand blue → light periwinkle (the navy figure).
-  // Navy #002C54 itself is too dark to register on a near-black canvas, so the
-  // ramp starts at a lifted version of it and keeps the hue.
-  const b1 = new THREE.Color("#1d5f96");
-  const b2 = new THREE.Color("#9fd8f7");
+  // On a paper background the ramps invert: points must be DARKER than the
+  // ground to be visible, so both strands run deep-to-mid rather than the
+  // dim-to-bright ramps a dark canvas needs.
+  // Strand A — brand teal, deepening toward the base.
+  const a1 = new THREE.Color("#00514f");
+  const a2 = new THREE.Color("#009f9d");
+  // Strand B — brand navy, the second figure.
+  const b1 = new THREE.Color("#002c54");
+  const b2 = new THREE.Color("#3d6f9e");
 
   const tmp = new THREE.Color();
 
@@ -135,10 +136,11 @@ const fragmentShader = /* glsl */ `
     float d = length(uv);
     if (d > 0.5) discard;
     float alpha = smoothstep(0.5, 0.06, d);
-    // Capped well below 1.0: with additive blending the overlap between
-    // neighbouring sprites is what creates brightness, so the per-point ceiling
-    // has to stay low or the whole form clips to white.
-    gl_FragColor = vec4(vColor, alpha * mix(0.16, 0.78, vFade));
+    // Normal alpha blending on a light ground. (Additive is the right choice
+    // on a dark canvas but is worthless here — adding light to near-white
+    // paper produces white, so the whole form would vanish.) Points nearer the
+    // camera are more opaque, which is what carries the depth read.
+    gl_FragColor = vec4(vColor, alpha * mix(0.10, 0.62, vFade));
   }
 `;
 
@@ -186,7 +188,7 @@ function Strands({ pointer }: { pointer: React.RefObject<{ x: number; y: number 
         uniforms={uniforms}
         transparent
         depthWrite={false}
-        blending={THREE.AdditiveBlending}
+        blending={THREE.NormalBlending}
         vertexColors
       />
     </points>

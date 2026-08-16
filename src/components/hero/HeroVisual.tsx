@@ -34,18 +34,20 @@ function StaticVisual({ intensity = 1 }: { intensity?: number }) {
       className="absolute inset-0 overflow-hidden"
       style={{ opacity: intensity }}
     >
+      {/* Tints, not glows: on paper these read as ink washing into the page
+          rather than light being emitted from it. */}
       <div
-        className="absolute left-1/2 top-1/2 h-[42rem] w-[42rem] -translate-x-[58%] -translate-y-1/2 rounded-full opacity-70 blur-[90px]"
+        className="absolute left-1/2 top-1/2 h-[42rem] w-[42rem] -translate-x-[58%] -translate-y-1/2 rounded-full blur-[90px]"
         style={{
           background:
-            "radial-gradient(circle, rgba(29,95,150,0.55) 0%, rgba(0,44,84,0.22) 45%, transparent 70%)",
+            "radial-gradient(circle, rgba(0,44,84,0.16) 0%, rgba(0,44,84,0.06) 45%, transparent 70%)",
         }}
       />
       <div
-        className="absolute left-1/2 top-1/2 h-[34rem] w-[34rem] -translate-x-[38%] -translate-y-[46%] rounded-full opacity-70 blur-[90px]"
+        className="absolute left-1/2 top-1/2 h-[34rem] w-[34rem] -translate-x-[38%] -translate-y-[46%] rounded-full blur-[90px]"
         style={{
           background:
-            "radial-gradient(circle, rgba(0,159,157,0.5) 0%, rgba(20,214,207,0.16) 45%, transparent 70%)",
+            "radial-gradient(circle, rgba(0,159,157,0.20) 0%, rgba(0,159,157,0.07) 45%, transparent 70%)",
         }}
       />
     </div>

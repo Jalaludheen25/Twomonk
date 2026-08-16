@@ -142,18 +142,3 @@ export function Hero() {
   );
 }
 
-/** One mask-revealed headline line. */
-function Line({ children, delay }: { children: React.ReactNode; delay: number }) {
-  return (
-    <span className="block overflow-hidden">
-      <motion.span
-        className="block will-change-transform"
-        initial={{ y: "108%" }}
-        animate={{ y: "0%" }}
-        transition={{ duration: 1.25, ease: EASE.expo, delay }}
-      >
-        {children}
-      </motion.span>
-    </span>
-  );
-}

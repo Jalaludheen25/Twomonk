@@ -47,13 +47,15 @@ export function ProjectCover({
     >
       <defs>
         <radialGradient id={`${id}-orb`} cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor={accent[0]} stopOpacity="0.85" />
-          <stop offset="55%" stopColor={accent[0]} stopOpacity="0.22" />
+          <stop offset="0%" stopColor={accent[0]} stopOpacity="0.42" />
+          <stop offset="55%" stopColor={accent[0]} stopOpacity="0.13" />
           <stop offset="100%" stopColor={accent[0]} stopOpacity="0" />
         </radialGradient>
+        {/* Paper bed with a faint cool cast, so covers sit on the page rather
+            than punching a dark hole in it. */}
         <linearGradient id={`${id}-bed`} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#041b2d" />
-          <stop offset="100%" stopColor="#000a12" />
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="100%" stopColor="#e3ecf3" />
         </linearGradient>
         <pattern
           id={`${id}-grid`}
