@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+﻿import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { fontVariables } from "@/lib/fonts";
 import { site } from "@/data/site";
@@ -11,8 +11,8 @@ import { StructuredData } from "@/components/seo/StructuredData";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.tagline}`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} â€” ${site.tagline}`,
+    template: `%s â€” ${site.name}`,
   },
   description: site.positioning,
   applicationName: site.name,
@@ -33,14 +33,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: site.name,
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name} â€” ${site.tagline}`,
     description: site.positioning,
     url: site.url,
     locale: "en",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name} â€” ${site.tagline}`,
     description: site.positioning,
   },
   robots: { index: true, follow: true },
@@ -57,13 +57,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         <StructuredData />
       </head>
-      <body className="min-h-screen bg-ink font-body text-paper">
+      <body className="min-h-screen bg-paper font-body text-ink">
         <SmoothScroll>
           <Cursor />
           {/* Keyboard users land here first. */}
           <a
             href="#main"
-            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-full focus:bg-teal-bright focus:px-5 focus:py-3 focus:font-mono focus:text-[11px] focus:uppercase focus:tracking-[0.16em] focus:text-ink"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-full focus:bg-accent focus:px-5 focus:py-3 focus:font-mono focus:text-[11px] focus:uppercase focus:tracking-[0.16em] focus:text-ink"
           >
             Skip to content
           </a>

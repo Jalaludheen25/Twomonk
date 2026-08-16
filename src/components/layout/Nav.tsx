@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
@@ -28,7 +28,7 @@ export function Nav() {
   /*
    * The menu stores the route it was opened on rather than a boolean, so
    * navigating away closes it as a derived value. An effect watching
-   * `pathname` would do the same thing via an extra render pass — this needs
+   * `pathname` would do the same thing via an extra render pass â€” this needs
    * no effect at all.
    */
   const [openedOn, setOpenedOn] = useState<string | null>(null);
@@ -87,7 +87,7 @@ export function Nav() {
             className={cn(
               "flex items-center justify-between rounded-full px-4 py-2.5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] sm:px-5",
               scrolled
-                ? "border border-ink-line/80 bg-ink/72 backdrop-blur-xl"
+                ? "border border-line/80 bg-paper/72 backdrop-blur-xl"
                 : "border border-transparent bg-transparent",
             )}
           >
@@ -109,19 +109,19 @@ export function Nav() {
                         aria-current={active ? "page" : undefined}
                         className="group relative block overflow-hidden px-4 py-2 font-mono text-[11px] uppercase tracking-[0.16em]"
                       >
-                        {/* Two stacked copies slide vertically on hover —
+                        {/* Two stacked copies slide vertically on hover â€”
                             reads as one label rolling over. */}
                         <span
                           className={cn(
                             "block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full",
-                            active ? "text-teal-bright" : "text-fog",
+                            active ? "text-accent-text" : "text-muted",
                           )}
                         >
                           {item.label}
                         </span>
                         <span
                           aria-hidden
-                          className="absolute inset-0 flex translate-y-full items-center justify-center text-teal-bright transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0"
+                          className="absolute inset-0 flex translate-y-full items-center justify-center text-accent-text transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0"
                         >
                           {item.label}
                         </span>
@@ -139,7 +139,7 @@ export function Nav() {
                 </Button>
               </div>
 
-              {/* Open control — visible below lg.
+              {/* Open control â€” visible below lg.
                   The close control lives inside the overlay instead: this
                   header is z-50 and the overlay is z-60, so a toggle left here
                   would be painted over and unclickable once the menu opened. */}
@@ -149,7 +149,7 @@ export function Nav() {
                 aria-expanded={open}
                 aria-controls="mobile-menu"
                 data-cursor="hover"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-ink-line text-paper lg:hidden"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink lg:hidden"
               >
                 <span className="sr-only">Open menu</span>
                 <span aria-hidden className="relative block h-3 w-5">
@@ -174,7 +174,7 @@ export function Nav() {
             animate={{ clipPath: "inset(0 0 0% 0)" }}
             exit={{ clipPath: "inset(0 0 100% 0)" }}
             transition={{ duration: 0.7, ease: EASE.expo }}
-            className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-ink-deep lg:hidden"
+            className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-paper-deep lg:hidden"
           >
             {/* Menu's own header: keeps the brand visible and carries the
                 close control inside the overlay's stacking context. */}
@@ -185,7 +185,7 @@ export function Nav() {
                 onClick={() => setOpen(false)}
                 data-cursor="hover"
                 autoFocus
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-ink-line text-paper transition-colors hover:border-teal-bright hover:text-teal-bright"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-accent hover:text-accent-text"
               >
                 <span className="sr-only">Close menu</span>
                 <span aria-hidden className="relative block h-4 w-4">
@@ -199,7 +199,7 @@ export function Nav() {
               <nav aria-label="Mobile" className="flex-1">
                 <ul>
                   {primaryNav.map((item, i) => (
-                    <li key={item.href} className="overflow-hidden border-b border-ink-line/60">
+                    <li key={item.href} className="overflow-hidden border-b border-line/60">
                       <motion.div
                         initial={{ y: "100%", opacity: 0 }}
                         animate={{ y: "0%", opacity: 1 }}
@@ -216,7 +216,7 @@ export function Nav() {
                           <span className="font-display text-[clamp(2rem,9vw,3.25rem)] font-semibold leading-none tracking-[-0.035em]">
                             {item.label}
                           </span>
-                          <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-fog-dim">
+                          <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-2">
                             0{i + 1}
                           </span>
                         </Link>
@@ -236,12 +236,12 @@ export function Nav() {
                   {navCta.label}
                 </Button>
 
-                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[11px] tracking-[0.08em] text-fog">
-                  <a href={`mailto:${site.contact.email}`} className="hover:text-teal-bright">
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[11px] tracking-[0.08em] text-muted">
+                  <a href={`mailto:${site.contact.email}`} className="hover:text-accent-text">
                     {site.contact.email}
                   </a>
                   {site.contact.phones.map((p) => (
-                    <a key={p.value} href={p.href} className="hover:text-teal-bright">
+                    <a key={p.value} href={p.href} className="hover:text-accent-text">
                       {p.region} {p.value}
                     </a>
                   ))}

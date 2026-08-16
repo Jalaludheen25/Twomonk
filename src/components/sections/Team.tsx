@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { Eyebrow } from "@/components/ui/Reveal";
 import { team, hasTeam, teamPlaceholderNote } from "@/data/people";
 import { site } from "@/data/site";
@@ -8,12 +8,12 @@ import { site } from "@/data/site";
  *
  * Renders real people when `src/data/people.ts` has them, and a written
  * statement when it doesn't. The brief rules out generic stock portraits, and
- * inventing faces for a company page would be worse than saying nothing — so
+ * inventing faces for a company page would be worse than saying nothing â€” so
  * the fallback is honest copy rather than five grey silhouettes.
  */
 export function Team() {
   return (
-    <section id="team" className="border-t border-ink-line/50 py-24 sm:py-32">
+    <section id="team" className="border-t border-line/50 py-24 sm:py-32">
       <div className="tm-shell">
         <Eyebrow>Team</Eyebrow>
 
@@ -25,7 +25,7 @@ export function Team() {
             <ul className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
               {team.map((m) => (
                 <li key={m.name} className="group">
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-card border border-ink-line/70 bg-ink-raised">
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-card border border-line/70 bg-surface">
                     {m.photo ? (
                       <Image
                         src={m.photo}
@@ -36,7 +36,7 @@ export function Team() {
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                     ) : (
-                      <span className="flex h-full w-full items-center justify-center font-display text-6xl font-semibold text-ink-line">
+                      <span className="flex h-full w-full items-center justify-center font-display text-6xl font-semibold text-line">
                         {m.name
                           .split(" ")
                           .map((n) => n[0])
@@ -45,11 +45,11 @@ export function Team() {
                     )}
                   </div>
                   <h3 className="mt-5 font-display text-xl font-semibold">{m.name}</h3>
-                  <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.14em] text-teal-bright">
+                  <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.14em] text-accent-text">
                     {m.role}
                   </p>
                   {m.bio ? (
-                    <p className="mt-3 text-[14px] leading-relaxed text-fog">{m.bio}</p>
+                    <p className="mt-3 text-[14px] leading-relaxed text-muted">{m.bio}</p>
                   ) : null}
                 </li>
               ))}
@@ -61,14 +61,14 @@ export function Team() {
               {teamPlaceholderNote.heading}
             </h2>
             <div className="lg:col-span-5">
-              <p className="text-[15px] leading-relaxed text-fog">
+              <p className="text-[15px] leading-relaxed text-muted">
                 {teamPlaceholderNote.body}
               </p>
-              <p className="mt-6 font-mono text-[11px] uppercase leading-relaxed tracking-[0.14em] text-fog-dim">
-                {site.contact.locations.join(" · ")}
+              <p className="mt-6 font-mono text-[11px] uppercase leading-relaxed tracking-[0.14em] text-muted-2">
+                {site.contact.locations.join(" Â· ")}
               </p>
               {process.env.NODE_ENV !== "production" ? (
-                <p className="mt-8 rounded-card border border-teal-bright/30 bg-teal-bright/[0.06] px-5 py-4 font-mono text-[11px] leading-relaxed text-teal-bright">
+                <p className="mt-8 rounded-card border border-accent/30 bg-accent/[0.06] px-5 py-4 font-mono text-[11px] leading-relaxed text-accent-text">
                   BUILD NOTICE (development only): add real team members to{" "}
                   <code>src/data/people.ts</code> and this becomes a photo grid
                   automatically.

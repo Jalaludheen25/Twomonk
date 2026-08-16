@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { PageHero } from "@/components/layout/PageHero";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { Faqs } from "@/components/sections/Faqs";
@@ -23,7 +23,7 @@ export default function ContactPage() {
         intro="Tell us what you're trying to build. We'll come back with an honest view of scope, approach and cost."
       />
 
-      <section className="border-t border-ink-line/50 py-16 sm:py-24">
+      <section className="border-t border-line/50 py-16 sm:py-24">
         <div className="tm-shell grid gap-14 lg:grid-cols-12 lg:gap-20">
           <div className="lg:col-span-7">
             <ContactForm />
@@ -32,15 +32,15 @@ export default function ContactPage() {
           <aside className="lg:col-span-5">
             <Eyebrow>Direct</Eyebrow>
 
-            <ul className="mt-8 space-y-6 border-t border-ink-line/60 pt-8">
+            <ul className="mt-8 space-y-6 border-t border-line/60 pt-8">
               <li>
-                <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-fog-dim">
+                <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-2">
                   Email
                 </p>
                 <a
                   href={`mailto:${site.contact.email}`}
                   data-cursor="hover"
-                  className="mt-2 block font-display text-xl font-semibold transition-colors hover:text-teal-bright"
+                  className="mt-2 block font-display text-xl font-semibold transition-colors hover:text-accent-text"
                 >
                   {site.contact.email}
                 </a>
@@ -48,13 +48,13 @@ export default function ContactPage() {
 
               {site.contact.phones.map((p) => (
                 <li key={p.value}>
-                  <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-fog-dim">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-2">
                     {p.region}
                   </p>
                   <a
                     href={p.href}
                     data-cursor="hover"
-                    className="mt-2 block font-display text-xl font-semibold transition-colors hover:text-teal-bright"
+                    className="mt-2 block font-display text-xl font-semibold transition-colors hover:text-accent-text"
                   >
                     {p.value}
                   </a>
@@ -62,7 +62,7 @@ export default function ContactPage() {
               ))}
 
               <li>
-                <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-fog-dim">
+                <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-2">
                   Social
                 </p>
                 <ul className="mt-2 flex gap-4">
@@ -73,7 +73,7 @@ export default function ContactPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         data-cursor="hover"
-                        className="text-[15px] text-fog transition-colors hover:text-teal-bright"
+                        className="text-[15px] text-muted transition-colors hover:text-accent-text"
                       >
                         {s.label}
                       </a>
@@ -83,18 +83,18 @@ export default function ContactPage() {
               </li>
             </ul>
 
-            <div className="mt-12 border-t border-ink-line/60 pt-8">
-              <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-teal-bright">
+            <div className="mt-12 border-t border-line/60 pt-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-accent-text">
                 What happens next
               </p>
               <ol className="mt-5 space-y-3">
                 {processSteps.slice(0, 3).map((s) => (
-                  <li key={s.index} className="flex gap-3 text-[14px] text-fog">
-                    <span className="font-mono text-[10px] tracking-[0.16em] text-fog-dim">
+                  <li key={s.index} className="flex gap-3 text-[14px] text-muted">
+                    <span className="font-mono text-[10px] tracking-[0.16em] text-muted-2">
                       {s.index}
                     </span>
                     <span>
-                      <span className="text-paper">{s.name}</span> — {s.summary}
+                      <span className="text-ink">{s.name}</span> â€” {s.summary}
                     </span>
                   </li>
                 ))}

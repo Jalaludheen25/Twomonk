@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef, useState } from "react";
 import Link from "next/link";
@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
  * twenty-odd cards. That is the whole point: TwoMonk's portfolio is large, and
  * a flat grid of it would read as clutter instead of range.
  *
- * Desktop gets a pinned, scroll-driven experience — a rail of all five areas
+ * Desktop gets a pinned, scroll-driven experience â€” a rail of all five areas
  * on the left so the breadth is visible at a glance, the active area's detail
  * in the middle, and a generative visual on the right that changes with it.
  *
@@ -25,7 +25,7 @@ import { cn } from "@/lib/utils";
  */
 export function ServiceEcosystem() {
   return (
-    <section id="services" className="relative border-t border-ink-line/50">
+    <section id="services" className="relative border-t border-line/50">
       <PinnedEcosystem />
       <StackedEcosystem />
     </section>
@@ -63,13 +63,13 @@ function PinnedEcosystem() {
         <div className="tm-shell">
           <div className="flex items-center justify-between">
             <Eyebrow>Service ecosystem</Eyebrow>
-            <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-fog-dim">
+            <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-2">
               {cap.index} / {String(capabilities.length).padStart(2, "0")}
             </span>
           </div>
 
           <div className="mt-10 grid grid-cols-12 gap-8 xl:gap-12">
-            {/* Rail — the whole ecosystem stays visible */}
+            {/* Rail â€” the whole ecosystem stays visible */}
             <nav aria-label="Capability areas" className="col-span-3">
               <ul className="space-y-1">
                 {capabilities.map((c, i) => (
@@ -84,7 +84,7 @@ function PinnedEcosystem() {
                       <span
                         className={cn(
                           "font-mono text-[10px] tracking-[0.16em] transition-colors duration-500",
-                          i === active ? "text-teal-bright" : "text-fog-dim",
+                          i === active ? "text-accent-text" : "text-muted-2",
                         )}
                       >
                         {c.index}
@@ -93,8 +93,8 @@ function PinnedEcosystem() {
                         className={cn(
                           "font-display text-3xl font-semibold leading-none tracking-[-0.03em] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] xl:text-4xl",
                           i === active
-                            ? "text-paper"
-                            : "text-fog-dim/50 group-hover:text-fog",
+                            ? "text-ink"
+                            : "text-muted-2/50 group-hover:text-muted",
                         )}
                       >
                         {c.name}
@@ -105,9 +105,9 @@ function PinnedEcosystem() {
               </ul>
 
               {/* Progress rail */}
-              <div className="mt-8 h-px w-full bg-ink-line">
+              <div className="mt-8 h-px w-full bg-paper-line">
                 <motion.div
-                  className="h-px origin-left bg-teal-bright"
+                  className="h-px origin-left bg-accent"
                   style={{ scaleX: scrollYProgress }}
                 />
               </div>
@@ -123,21 +123,21 @@ function PinnedEcosystem() {
                   exit={{ opacity: 0, y: -12 }}
                   transition={{ duration: DURATION.fast, ease: EASE.expo }}
                 >
-                  <h2 className="font-display text-h3 font-semibold text-paper">
+                  <h2 className="font-display text-h3 font-semibold text-ink">
                     {cap.headline}
                   </h2>
-                  <p className="mt-4 max-w-md text-[15px] leading-relaxed text-fog">
+                  <p className="mt-4 max-w-md text-[15px] leading-relaxed text-muted">
                     {cap.description}
                   </p>
 
-                  <dl className="mt-8 space-y-4 border-t border-ink-line/60 pt-6">
+                  <dl className="mt-8 space-y-4 border-t border-line/60 pt-6">
                     {cap.groups.map((g) => (
                       <div key={g.name} className="grid grid-cols-12 gap-3">
-                        <dt className="col-span-4 font-mono text-[10px] uppercase leading-relaxed tracking-[0.14em] text-teal-bright/80">
+                        <dt className="col-span-4 font-mono text-[10px] uppercase leading-relaxed tracking-[0.14em] text-accent-text/80">
                           {g.name}
                         </dt>
-                        <dd className="col-span-8 text-[13px] leading-relaxed text-fog-dim">
-                          {g.services.map((s) => s.name).join(" · ")}
+                        <dd className="col-span-8 text-[13px] leading-relaxed text-muted-2">
+                          {g.services.map((s) => s.name).join(" Â· ")}
                         </dd>
                       </div>
                     ))}
@@ -146,9 +146,9 @@ function PinnedEcosystem() {
                   <Link
                     href={`/services#${cap.id}`}
                     data-cursor="hover"
-                    className="mt-8 inline-block font-mono text-[11px] uppercase tracking-[0.16em] text-teal-bright underline-offset-4 hover:underline"
+                    className="mt-8 inline-block font-mono text-[11px] uppercase tracking-[0.16em] text-accent-text underline-offset-4 hover:underline"
                   >
-                    All {cap.name} services →
+                    All {cap.name} services â†’
                   </Link>
                 </motion.div>
               </AnimatePresence>
@@ -200,16 +200,16 @@ function StackedEcosystem() {
       <h2 className="mt-8 font-display text-h2 font-semibold">
         Five ways we <span className="tm-accent">work</span>.
       </h2>
-      <p className="mt-5 max-w-md text-[15px] leading-relaxed text-fog">
+      <p className="mt-5 max-w-md text-[15px] leading-relaxed text-muted">
         A connected portfolio spanning software, design, intelligence, growth and
         infrastructure.
       </p>
 
-      <ul className="mt-12 border-t border-ink-line/60">
+      <ul className="mt-12 border-t border-line/60">
         {capabilities.map((c) => {
           const isOpen = open === c.id;
           return (
-            <li key={c.id} className="border-b border-ink-line/60">
+            <li key={c.id} className="border-b border-line/60">
               <h3>
                 <button
                   type="button"
@@ -219,7 +219,7 @@ function StackedEcosystem() {
                   className="flex w-full items-center justify-between gap-4 py-6 text-left"
                 >
                   <span className="flex items-baseline gap-3">
-                    <span className="font-mono text-[10px] tracking-[0.16em] text-teal-bright">
+                    <span className="font-mono text-[10px] tracking-[0.16em] text-accent-text">
                       {c.index}
                     </span>
                     <span className="font-display text-[clamp(1.75rem,8vw,2.5rem)] font-semibold leading-none tracking-[-0.03em]">
@@ -233,8 +233,8 @@ function StackedEcosystem() {
                       isOpen && "rotate-45",
                     )}
                   >
-                    <span className="absolute left-1/2 top-0 block h-3 w-px -translate-x-1/2 bg-teal-bright" />
-                    <span className="absolute left-0 top-1/2 block h-px w-3 -translate-y-1/2 bg-teal-bright" />
+                    <span className="absolute left-1/2 top-0 block h-3 w-px -translate-x-1/2 bg-accent" />
+                    <span className="absolute left-0 top-1/2 block h-px w-3 -translate-y-1/2 bg-accent" />
                   </span>
                 </button>
               </h3>
@@ -250,10 +250,10 @@ function StackedEcosystem() {
                     className="overflow-hidden"
                   >
                     <div className="pb-8">
-                      <p className="text-[15px] leading-relaxed text-fog">
+                      <p className="text-[15px] leading-relaxed text-muted">
                         {c.headline}
                       </p>
-                      <p className="mt-3 text-[14px] leading-relaxed text-fog-dim">
+                      <p className="mt-3 text-[14px] leading-relaxed text-muted-2">
                         {c.description}
                       </p>
 
@@ -264,11 +264,11 @@ function StackedEcosystem() {
                       <dl className="space-y-4">
                         {c.groups.map((g) => (
                           <div key={g.name}>
-                            <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-teal-bright/80">
+                            <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-accent-text/80">
                               {g.name}
                             </dt>
-                            <dd className="mt-1.5 text-[13px] leading-relaxed text-fog-dim">
-                              {g.services.map((s) => s.name).join(" · ")}
+                            <dd className="mt-1.5 text-[13px] leading-relaxed text-muted-2">
+                              {g.services.map((s) => s.name).join(" Â· ")}
                             </dd>
                           </div>
                         ))}
@@ -276,9 +276,9 @@ function StackedEcosystem() {
 
                       <Link
                         href={`/services#${c.id}`}
-                        className="mt-6 inline-block font-mono text-[11px] uppercase tracking-[0.16em] text-teal-bright underline-offset-4 hover:underline"
+                        className="mt-6 inline-block font-mono text-[11px] uppercase tracking-[0.16em] text-accent-text underline-offset-4 hover:underline"
                       >
-                        All {c.name} services →
+                        All {c.name} services â†’
                       </Link>
                     </div>
                   </motion.div>

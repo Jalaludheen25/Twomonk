@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
  * Deliberately not a small rounded card in a grid: one project per row on
  * desktop, alternating which side the media sits on, so each piece of work
  * gets the space of a magazine spread. The cover scales inside a fixed frame
- * on hover — the frame stays put, so nothing reflows and neighbouring cards
+ * on hover â€” the frame stays put, so nothing reflows and neighbouring cards
  * don't shift.
  */
 export function ProjectCard({
@@ -32,7 +32,7 @@ export function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={viewportOnce}
       transition={{ duration: DURATION.slow, ease: EASE.expo }}
-      className="group border-t border-ink-line/60 py-10 first:border-t-0 lg:py-14"
+      className="group border-t border-line/60 py-10 first:border-t-0 lg:py-14"
     >
       <Link
         href={`/work/${project.slug}`}
@@ -47,12 +47,12 @@ export function ProjectCard({
             flip && "lg:order-2",
           )}
         >
-          <div className="aspect-[16/10] w-full overflow-hidden rounded-card border border-ink-line/70">
+          <div className="aspect-[16/10] w-full overflow-hidden rounded-card border border-line/70">
             <div className="h-full w-full transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.045]">
               {project.cover ? (
                 <Image
                   src={project.cover}
-                  alt={`${project.name} — ${project.industry}`}
+                  alt={`${project.name} â€” ${project.industry}`}
                   width={1200}
                   height={750}
                   className="h-full w-full object-cover"
@@ -69,7 +69,7 @@ export function ProjectCard({
           </div>
 
           {project.isPlaceholder ? (
-            <span className="absolute left-4 top-4 rounded-full border border-teal-bright/40 bg-ink/80 px-3 py-1.5 font-mono text-[9px] uppercase tracking-[0.16em] text-teal-bright backdrop-blur">
+            <span className="absolute left-4 top-4 rounded-full border border-accent/40 bg-paper/80 px-3 py-1.5 font-mono text-[9px] uppercase tracking-[0.16em] text-accent-text backdrop-blur">
               Placeholder
             </span>
           ) : null}
@@ -77,45 +77,45 @@ export function ProjectCard({
 
         {/* Detail */}
         <div className={cn("lg:col-span-5", flip && "lg:order-1")}>
-          <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.16em] text-fog-dim">
-            <span className="text-teal-bright">
+          <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-2">
+            <span className="text-accent-text">
               {String(index + 1).padStart(2, "0")}
             </span>
             <span>{project.industry}</span>
-            <span aria-hidden>·</span>
+            <span aria-hidden>Â·</span>
             <span>{project.year}</span>
           </div>
 
-          <h3 className="mt-4 font-display text-h3 font-semibold text-paper">
+          <h3 className="mt-4 font-display text-h3 font-semibold text-ink">
             {project.name}
           </h3>
 
-          <p className="mt-3 max-w-md text-[15px] leading-relaxed text-fog">
+          <p className="mt-3 max-w-md text-[15px] leading-relaxed text-muted">
             {project.summary}
           </p>
 
-          <dl className="mt-6 space-y-3 border-t border-ink-line/60 pt-5 text-[13px]">
+          <dl className="mt-6 space-y-3 border-t border-line/60 pt-5 text-[13px]">
             <div className="flex gap-3">
-              <dt className="w-20 shrink-0 font-mono text-[10px] uppercase tracking-[0.14em] text-fog-dim">
+              <dt className="w-20 shrink-0 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-2">
                 Services
               </dt>
-              <dd className="text-fog">{project.services.join(" · ")}</dd>
+              <dd className="text-muted">{project.services.join(" Â· ")}</dd>
             </div>
             <div className="flex gap-3">
-              <dt className="w-20 shrink-0 font-mono text-[10px] uppercase tracking-[0.14em] text-fog-dim">
+              <dt className="w-20 shrink-0 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-2">
                 Stack
               </dt>
-              <dd className="text-fog">{project.technologies.join(" · ")}</dd>
+              <dd className="text-muted">{project.technologies.join(" Â· ")}</dd>
             </div>
           </dl>
 
-          <span className="mt-6 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-teal-bright">
+          <span className="mt-6 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-accent-text">
             View case study
             <span
               aria-hidden
               className="inline-block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1"
             >
-              →
+              â†’
             </span>
           </span>
         </div>

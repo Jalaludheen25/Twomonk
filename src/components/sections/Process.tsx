@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
@@ -8,16 +8,16 @@ import { EASE, DURATION } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 /**
- * Delivery process — the brochure's six steps, given room to breathe.
+ * Delivery process â€” the brochure's six steps, given room to breathe.
  *
- * Desktop pins the section and steps through Discover → Optimise as the user
+ * Desktop pins the section and steps through Discover â†’ Optimise as the user
  * scrolls, with a progress spine on the left. Below `lg` it becomes an ordinary
  * numbered list, because pinning six full-height steps on a phone is a long
  * scroll to nowhere.
  */
 export function Process() {
   return (
-    <section id="process" className="relative border-t border-ink-line/50">
+    <section id="process" className="relative border-t border-line/50">
       <PinnedProcess />
       <ListProcess />
     </section>
@@ -53,7 +53,7 @@ function PinnedProcess() {
         <div className="tm-shell">
           <div className="flex items-center justify-between">
             <Eyebrow>How we work</Eyebrow>
-            <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-fog-dim">
+            <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-2">
               From idea to impact
             </span>
           </div>
@@ -66,7 +66,7 @@ function PinnedProcess() {
                   <span
                     className={cn(
                       "font-mono text-[10px] tracking-[0.16em] transition-colors duration-500",
-                      i === active ? "text-teal-bright" : "text-fog-dim/60",
+                      i === active ? "text-accent-text" : "text-muted-2/60",
                     )}
                   >
                     {s.index}
@@ -74,7 +74,7 @@ function PinnedProcess() {
                   <span
                     className={cn(
                       "font-display text-4xl font-semibold leading-none tracking-[-0.03em] transition-colors duration-500 xl:text-5xl",
-                      i === active ? "text-paper" : "text-fog-dim/40",
+                      i === active ? "text-ink" : "text-muted-2/40",
                     )}
                   >
                     {s.name}
@@ -82,7 +82,7 @@ function PinnedProcess() {
                   {i === active ? (
                     <motion.span
                       layoutId="process-marker"
-                      className="ml-2 block h-px w-16 bg-teal-bright"
+                      className="ml-2 block h-px w-16 bg-accent"
                       transition={{ duration: DURATION.base, ease: EASE.expo }}
                     />
                   ) : null}
@@ -91,17 +91,17 @@ function PinnedProcess() {
             </ol>
 
             {/* Detail */}
-            <div className="col-span-7 border-l border-ink-line/60 pl-12">
+            <div className="col-span-7 border-l border-line/60 pl-12">
               <motion.div
                 key={step.index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: DURATION.base, ease: EASE.expo }}
               >
-                <p className="font-display text-h3 font-semibold text-paper">
+                <p className="font-display text-h3 font-semibold text-ink">
                   {step.summary}
                 </p>
-                <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-fog">
+                <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-muted">
                   {step.detail}
                 </p>
 
@@ -109,7 +109,7 @@ function PinnedProcess() {
                   {step.outputs.map((o) => (
                     <li
                       key={o}
-                      className="rounded-full border border-ink-line px-4 py-2 font-mono text-[10px] uppercase tracking-[0.14em] text-fog"
+                      className="rounded-full border border-line px-4 py-2 font-mono text-[10px] uppercase tracking-[0.14em] text-muted"
                     >
                       {o}
                     </li>
@@ -119,9 +119,9 @@ function PinnedProcess() {
             </div>
           </div>
 
-          <div className="mt-14 h-px w-full bg-ink-line">
+          <div className="mt-14 h-px w-full bg-paper-line">
             <motion.div
-              className="h-px origin-left bg-teal-bright"
+              className="h-px origin-left bg-accent"
               style={{ scaleX: scrollYProgress }}
             />
           </div>
@@ -138,26 +138,26 @@ function ListProcess() {
       <h2 className="mt-8 font-display text-h2 font-semibold">
         From idea to <span className="tm-accent">impact</span>.
       </h2>
-      <p className="mt-5 text-[15px] text-fog">A simple process. A strong partnership.</p>
+      <p className="mt-5 text-[15px] text-muted">A simple process. A strong partnership.</p>
 
-      <ol className="mt-12 border-t border-ink-line/60">
+      <ol className="mt-12 border-t border-line/60">
         {processSteps.map((s) => (
-          <li key={s.index} className="border-b border-ink-line/60 py-7">
+          <li key={s.index} className="border-b border-line/60 py-7">
             <div className="flex items-baseline gap-3">
-              <span className="font-mono text-[10px] tracking-[0.16em] text-teal-bright">
+              <span className="font-mono text-[10px] tracking-[0.16em] text-accent-text">
                 {s.index}
               </span>
               <h3 className="font-display text-[clamp(1.6rem,7vw,2.25rem)] font-semibold leading-none tracking-[-0.03em]">
                 {s.name}
               </h3>
             </div>
-            <p className="mt-3 text-[15px] leading-relaxed text-fog">{s.summary}</p>
-            <p className="mt-2 text-[14px] leading-relaxed text-fog-dim">{s.detail}</p>
+            <p className="mt-3 text-[15px] leading-relaxed text-muted">{s.summary}</p>
+            <p className="mt-2 text-[14px] leading-relaxed text-muted-2">{s.detail}</p>
             <ul className="mt-4 flex flex-wrap gap-2">
               {s.outputs.map((o) => (
                 <li
                   key={o}
-                  className="rounded-full border border-ink-line px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-fog-dim"
+                  className="rounded-full border border-line px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-2"
                 >
                   {o}
                 </li>

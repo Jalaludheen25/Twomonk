@@ -1,11 +1,11 @@
-"use client";
+﻿"use client";
 
 import { motion } from "motion/react";
 import { EASE, DURATION, viewportOnce } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 /**
- * Generic scroll reveal — content rises and fades once as it enters view.
+ * Generic scroll reveal â€” content rises and fades once as it enters view.
  * Under reduced motion the CSS in globals.css collapses the duration, so the
  * content still ends up visible rather than stuck at opacity 0.
  */
@@ -40,7 +40,7 @@ export function Reveal({
  * Line-mask headline reveal.
  *
  * Each line sits inside an overflow-hidden block and slides up from below.
- * This is the single highest-value motion technique on the reference sites —
+ * This is the single highest-value motion technique on the reference sites â€”
  * it makes type feel physically set rather than faded in.
  *
  * Pass an array of strings; each becomes its own animated line.
@@ -94,7 +94,7 @@ export function Eyebrow({
   return (
     <div className={cn("flex items-center gap-3", className)}>
       <motion.span
-        className="block h-px bg-teal-bright/60"
+        className="block h-px bg-accent/60"
         initial={{ width: 0 }}
         whileInView={{ width: 28 }}
         viewport={viewportOnce}

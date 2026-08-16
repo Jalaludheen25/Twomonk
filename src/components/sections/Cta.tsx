@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+﻿import { Fragment } from "react";
 import { Button } from "@/components/ui/Button";
 import { RevealLines } from "@/components/ui/Reveal";
 import { site } from "@/data/site";
@@ -16,7 +16,7 @@ export function Cta({
   lines?: string[];
 }) {
   return (
-    <section className="tm-grain relative overflow-hidden border-t border-ink-line/50 py-24 sm:py-36">
+    <section className="tm-grain relative overflow-hidden border-t border-line/50 py-24 sm:py-36">
       <div className="tm-grain-layer" aria-hidden />
 
       <div
@@ -48,11 +48,11 @@ export function Cta({
           </Button>
         </div>
 
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 font-mono text-[11px] uppercase tracking-[0.14em] text-fog-dim">
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-2">
           <a
             href={`mailto:${site.contact.email}`}
             data-cursor="hover"
-            className="transition-colors hover:text-teal-bright"
+            className="transition-colors hover:text-accent-text"
           >
             {site.contact.email}
           </a>
@@ -61,7 +61,7 @@ export function Cta({
               key={p.value}
               href={p.href}
               data-cursor="hover"
-              className="transition-colors hover:text-teal-bright"
+              className="transition-colors hover:text-accent-text"
             >
               {p.region} {p.value}
             </a>

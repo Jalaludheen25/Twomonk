@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
@@ -13,7 +13,7 @@ import { EASE, DURATION } from "@/lib/motion";
  *
  * Structure, from the top: a small locator rail, the headline set as
  * mask-revealed lines at editorial scale, the supporting line and actions, and
- * a bottom rail carrying the IDEA → GROWTH sequence that the whole site is
+ * a bottom rail carrying the IDEA â†’ GROWTH sequence that the whole site is
  * organised around.
  *
  * The headline lands one line at a time on an expo-out curve. The 3D form sits
@@ -47,15 +47,15 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: DURATION.slow, ease: EASE.expo, delay: 0.15 }}
-          className="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.16em] text-fog-dim"
+          className="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.16em] text-muted-2"
         >
-          <span>{site.contact.locations.join(" · ")}</span>
+          <span>{site.contact.locations.join(" Â· ")}</span>
           <span className="hidden sm:block">{site.tagline}</span>
         </motion.div>
 
-        {/* Headline — capped so it never runs under the visual on the right */}
+        {/* Headline â€” capped so it never runs under the visual on the right */}
         <div className="flex flex-1 flex-col justify-center py-10 sm:py-14">
-          <h1 className="tm-optical-display max-w-[16ch] font-display text-display font-semibold text-paper lg:max-w-[13ch]">
+          <h1 className="tm-optical-display max-w-[16ch] font-display text-display font-semibold text-ink lg:max-w-[13ch]">
             <Line delay={0.3}>
               Ideas that <span className="tm-accent">move</span>.
             </Line>
@@ -67,7 +67,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: DURATION.slow, ease: EASE.expo, delay: 0.72 }}
-              className="max-w-md text-lead text-fog md:col-span-6 lg:col-span-5"
+              className="max-w-md text-lead text-muted md:col-span-6 lg:col-span-5"
             >
               We design, build and grow digital experiences, products and technology
               solutions for ambitious businesses.
@@ -79,7 +79,7 @@ export function Hero() {
               transition={{ duration: DURATION.slow, ease: EASE.expo, delay: 0.84 }}
               className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center md:col-span-6 md:justify-end lg:col-span-7"
             >
-              {/* Full-width stacked on phones — equal-width targets read as a
+              {/* Full-width stacked on phones â€” equal-width targets read as a
                   deliberate pair rather than two mismatched pills. */}
               <Button href="/contact" className="justify-center">
                 Start a Project
@@ -92,22 +92,22 @@ export function Hero() {
         </div>
       </motion.div>
 
-      {/* Bottom rail — the sequence the whole site is built around */}
+      {/* Bottom rail â€” the sequence the whole site is built around */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: DURATION.slow, ease: EASE.expo, delay: 1 }}
         className="tm-shell relative"
       >
-        <div className="flex flex-col gap-4 border-t border-ink-line/70 pt-5 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-4 border-t border-line/70 pt-5 sm:flex-row sm:items-center sm:justify-between">
           <ol className="flex flex-wrap items-center gap-x-3 gap-y-1.5 font-mono text-[11px] uppercase tracking-[0.16em]">
             {PIPELINE.map((step, i) => (
               <li key={step} className="flex items-center gap-3">
-                <span className={i === 0 ? "text-teal-bright" : "text-fog-dim"}>
+                <span className={i === 0 ? "text-accent-text" : "text-muted-2"}>
                   {step}
                 </span>
                 {i < PIPELINE.length - 1 ? (
-                  <span aria-hidden className="text-ink-line">
+                  <span aria-hidden className="text-line">
                     /
                   </span>
                 ) : null}
@@ -120,7 +120,7 @@ export function Hero() {
           <a
             href="#statement"
             data-cursor="hover"
-            className="group hidden items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.16em] text-fog-dim transition-colors hover:text-teal-bright sm:flex"
+            className="group hidden items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-2 transition-colors hover:text-accent-text sm:flex"
           >
             Scroll
             <ArrowDown

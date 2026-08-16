@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 /**
  * Brand marks.
  *
- * These use the official artwork rather than a re-drawn approximation — the
+ * These use the official artwork rather than a re-drawn approximation â€” the
  * mark is two monk figures (navy + teal) standing side by side, and that
  * "partner beside you" reading is the core of the identity. Files live in
  * /public/logos and were cropped from the supplied master PNGs.
@@ -22,7 +22,7 @@ export function LogoMark({
   size?: number;
   variant?: "white" | "colour" | "black";
 }) {
-  // Mark artwork is 1648 × 2053 → aspect 0.803
+  // Mark artwork is 1648 Ã— 2053 â†’ aspect 0.803
   const width = Math.round(size * 0.803);
   return (
     <Image
@@ -46,7 +46,7 @@ export function LogoLockup({
   height?: number;
   variant?: "white" | "colour" | "black";
 }) {
-  // Full lockup is 3928 × 2053 → aspect 1.913
+  // Full lockup is 3928 Ã— 2053 â†’ aspect 1.913
   const width = Math.round(height * 1.913);
   return (
     <Image
@@ -70,7 +70,7 @@ export function LogoLink({
   return (
     <Link
       href="/"
-      aria-label={`${site.name} — home`}
+      aria-label={`${site.name} â€” home`}
       data-cursor="hover"
       className={cn("group flex items-center gap-3", className)}
     >
@@ -78,9 +78,9 @@ export function LogoLink({
         size={markSize}
         className="transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-0.5"
       />
-      <span className="font-display text-[15px] font-semibold leading-none tracking-[-0.02em] text-paper">
+      <span className="font-display text-[15px] font-semibold leading-none tracking-[-0.02em] text-ink">
         {site.shortName}
-        <span className="text-teal-bright">.</span>
+        <span className="text-accent-text">.</span>
       </span>
     </Link>
   );

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform, type MotionValue } from "motion/react";
@@ -8,7 +8,7 @@ import { site } from "@/data/site";
 /**
  * Brand statement.
  *
- * The sentence fills in word by word as the section crosses the viewport —
+ * The sentence fills in word by word as the section crosses the viewport â€”
  * scroll position drives opacity directly rather than a one-shot animation, so
  * reading pace and scroll pace are the same thing. Dim words stay legible
  * (not invisible), which keeps the sentence readable at any scroll position
@@ -28,7 +28,7 @@ export function Statement() {
   const words = STATEMENT.split(" ");
 
   return (
-    <section id="statement" className="relative border-t border-ink-line/50">
+    <section id="statement" className="relative border-t border-line/50">
       <div ref={ref} className="tm-shell py-28 sm:py-40 lg:py-48">
         <Eyebrow>What we do</Eyebrow>
 
@@ -44,11 +44,11 @@ export function Statement() {
           ))}
         </p>
 
-        <div className="mt-14 grid gap-10 border-t border-ink-line/50 pt-10 md:grid-cols-12">
-          <p className="text-[15px] leading-relaxed text-fog md:col-span-5">
+        <div className="mt-14 grid gap-10 border-t border-line/50 pt-10 md:grid-cols-12">
+          <p className="text-[15px] leading-relaxed text-muted md:col-span-5">
             {site.positioning}
           </p>
-          <ul className="flex flex-wrap gap-x-6 gap-y-3 font-mono text-[11px] uppercase tracking-[0.16em] text-fog-dim md:col-span-7 md:justify-end">
+          <ul className="flex flex-wrap gap-x-6 gap-y-3 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-2 md:col-span-7 md:justify-end">
             {site.themes.map((t) => (
               <li key={t} className="flex items-center gap-6">
                 <span>{t}</span>

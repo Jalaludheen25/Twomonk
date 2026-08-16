@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { cn } from "@/lib/utils";
 
@@ -18,7 +18,7 @@ export function Marquee({
   duration = 44,
   reverse = false,
   className,
-  separator = "✦",
+  separator = "âœ¦",
 }: {
   items: string[];
   /** Seconds for one full cycle. Longer = slower. */
@@ -34,10 +34,10 @@ export function Marquee({
     >
       {items.map((item, i) => (
         <li key={`${item}-${i}`} className="flex items-center whitespace-nowrap">
-          <span className="px-5 font-mono text-[12px] uppercase tracking-[0.14em] text-fog sm:px-7 sm:text-[13px]">
+          <span className="px-5 font-mono text-[12px] uppercase tracking-[0.14em] text-muted sm:px-7 sm:text-[13px]">
             {item}
           </span>
-          <span aria-hidden className="text-[10px] text-teal-dim">
+          <span aria-hidden className="text-[10px] text-muted-2">
             {separator}
           </span>
         </li>

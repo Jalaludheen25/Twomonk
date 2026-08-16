@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/layout/PageHero";
 import { Cta } from "@/components/sections/Cta";
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 /**
  * Insights index.
  *
- * The architecture is complete — categories, article type, routing and
- * per-post pages all exist — but no articles are published, because inventing
+ * The architecture is complete â€” categories, article type, routing and
+ * per-post pages all exist â€” but no articles are published, because inventing
  * thought leadership would be worse than an honest empty state. Add entries to
  * `insights` in src/data/insights.ts and this page fills in.
  */
@@ -30,16 +30,16 @@ export default function InsightsPage() {
         intro="Occasional writing on technology decisions, AI that earns its place, and what actually moves the numbers."
       />
 
-      <section className="border-t border-ink-line/50 py-16 sm:py-24">
+      <section className="border-t border-line/50 py-16 sm:py-24">
         <div className="tm-shell">
           <Eyebrow>Topics</Eyebrow>
-          <ul className="mt-8 grid gap-px overflow-hidden rounded-card bg-ink-line/60 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-8 grid gap-px overflow-hidden rounded-card bg-paper-line/60 sm:grid-cols-2 lg:grid-cols-3">
             {insightCategories.map((c) => (
-              <li key={c.id} className="bg-ink p-7">
-                <h2 className="font-display text-xl font-semibold text-paper">
+              <li key={c.id} className="bg-paper p-7">
+                <h2 className="font-display text-xl font-semibold text-ink">
                   {c.name}
                 </h2>
-                <p className="mt-2.5 text-[14px] leading-relaxed text-fog">
+                <p className="mt-2.5 text-[14px] leading-relaxed text-muted">
                   {c.description}
                 </p>
               </li>
@@ -47,17 +47,17 @@ export default function InsightsPage() {
           </ul>
 
           {hasInsights ? (
-            <ul className="mt-16 border-t border-ink-line/60">
+            <ul className="mt-16 border-t border-line/60">
               {insights.map((post) => (
-                <li key={post.slug} className="border-b border-ink-line/60">
+                <li key={post.slug} className="border-b border-line/60">
                   <Link
                     href={`/insights/${post.slug}`}
                     data-cursor="view"
                     data-cursor-label="Read"
                     className="group grid gap-4 py-8 lg:grid-cols-12 lg:items-baseline"
                   >
-                    <div className="flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.16em] text-fog-dim lg:col-span-3">
-                      <span className="text-teal-bright">{post.category}</span>
+                    <div className="flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-2 lg:col-span-3">
+                      <span className="text-accent-text">{post.category}</span>
                       <time dateTime={post.date}>
                         {new Date(post.date).toLocaleDateString("en-GB", {
                           day: "numeric",
@@ -66,10 +66,10 @@ export default function InsightsPage() {
                         })}
                       </time>
                     </div>
-                    <h3 className="font-display text-h3 font-semibold transition-colors group-hover:text-teal-bright lg:col-span-7">
+                    <h3 className="font-display text-h3 font-semibold transition-colors group-hover:text-accent-text lg:col-span-7">
                       {post.title}
                     </h3>
-                    <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-fog-dim lg:col-span-2 lg:text-right">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-2 lg:col-span-2 lg:text-right">
                       {post.readingTime}
                     </span>
                   </Link>
@@ -77,25 +77,25 @@ export default function InsightsPage() {
               ))}
             </ul>
           ) : (
-            <div className="mt-16 rounded-card border border-ink-line/70 px-8 py-14 text-center sm:px-14 sm:py-20">
-              <p className="font-display text-h3 font-semibold text-paper">
+            <div className="mt-16 rounded-card border border-line/70 px-8 py-14 text-center sm:px-14 sm:py-20">
+              <p className="font-display text-h3 font-semibold text-ink">
                 Nothing published yet.
               </p>
-              <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-fog">
+              <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-muted">
                 We would rather publish nothing than publish filler. Writing is on
-                the way — in the meantime, the fastest way to get our thinking on
+                the way â€” in the meantime, the fastest way to get our thinking on
                 your problem is to ask.
               </p>
               <Link
                 href="/contact"
                 data-cursor="hover"
-                className="mt-8 inline-block font-mono text-[11px] uppercase tracking-[0.16em] text-teal-bright underline-offset-4 hover:underline"
+                className="mt-8 inline-block font-mono text-[11px] uppercase tracking-[0.16em] text-accent-text underline-offset-4 hover:underline"
               >
-                Ask us directly →
+                Ask us directly â†’
               </Link>
 
               {process.env.NODE_ENV !== "production" ? (
-                <p className="mx-auto mt-10 max-w-xl rounded-card border border-teal-bright/30 bg-teal-bright/[0.06] px-5 py-4 text-left font-mono text-[11px] leading-relaxed text-teal-bright">
+                <p className="mx-auto mt-10 max-w-xl rounded-card border border-accent/30 bg-accent/[0.06] px-5 py-4 text-left font-mono text-[11px] leading-relaxed text-accent-text">
                   BUILD NOTICE (development only): add articles to{" "}
                   <code>src/data/insights.ts</code> and this empty state is replaced
                   by the article index automatically.

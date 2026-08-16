@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
@@ -23,8 +23,8 @@ const initialState: EnquiryState = { status: "idle" };
 const BUDGETS = [
   "Not sure yet",
   "Under $5k",
-  "$5k – $15k",
-  "$15k – $50k",
+  "$5k â€“ $15k",
+  "$15k â€“ $50k",
   "$50k+",
 ];
 
@@ -97,7 +97,7 @@ export function ContactForm() {
         error={state.errors?.message}
       />
 
-      {/* Honeypot — visually and semantically hidden from real users */}
+      {/* Honeypot â€” visually and semantically hidden from real users */}
       <div aria-hidden className="absolute left-[-9999px] h-px w-px overflow-hidden">
         <label htmlFor="website">Website</label>
         <input id="website" name="website" tabIndex={-1} autoComplete="off" />
@@ -105,21 +105,21 @@ export function ContactForm() {
 
       <div className="flex flex-wrap items-center gap-5 pt-2">
         <Submit />
-        <p className="text-[13px] text-fog-dim">
+        <p className="text-[13px] text-muted-2">
           We reply to every enquiry, usually within one working day.
         </p>
       </div>
 
-      {/* Result — announced to assistive tech */}
+      {/* Result â€” announced to assistive tech */}
       <div aria-live="polite" role="status">
         {state.status !== "idle" && state.message ? (
           <div
             className={cn(
               "mt-4 rounded-card border px-5 py-4 text-[14px] leading-relaxed",
-              state.status === "ok" && "border-teal-bright/40 bg-teal-bright/[0.07] text-teal-bright",
+              state.status === "ok" && "border-accent/40 bg-accent/[0.07] text-accent-text",
               state.status === "error" && "border-red-400/40 bg-red-400/[0.07] text-red-300",
               state.status === "not-configured" &&
-                "border-teal-bright/40 bg-teal-bright/[0.07] text-teal-bright",
+                "border-accent/40 bg-accent/[0.07] text-accent-text",
             )}
           >
             <p>{state.message}</p>
@@ -128,7 +128,7 @@ export function ContactForm() {
                 href={state.mailto}
                 className="mt-3 inline-block font-mono text-[11px] uppercase tracking-[0.16em] underline underline-offset-4"
               >
-                Open email with details →
+                Open email with details â†’
               </a>
             ) : null}
           </div>
@@ -148,7 +148,7 @@ function Submit() {
 }
 
 const inputBase =
-  "w-full rounded-xl border bg-ink-raised/60 px-4 py-3.5 text-[15px] text-paper placeholder:text-fog-dim/70 transition-colors duration-300 focus:border-teal-bright focus:outline-none";
+  "w-full rounded-xl border bg-surface/60 px-4 py-3.5 text-[15px] text-ink placeholder:text-muted-2/70 transition-colors duration-300 focus:border-accent focus:outline-none";
 
 /** Shared label + error scaffolding for every control. */
 function FieldShell({
@@ -168,10 +168,10 @@ function FieldShell({
     <div>
       <label
         htmlFor={id}
-        className="mb-2 block font-mono text-[10px] uppercase tracking-[0.16em] text-fog-dim"
+        className="mb-2 block font-mono text-[10px] uppercase tracking-[0.16em] text-muted-2"
       >
         {label}
-        {required ? <span className="ml-1 text-teal-bright">*</span> : null}
+        {required ? <span className="ml-1 text-accent-text">*</span> : null}
       </label>
       {children}
       {error ? (
@@ -204,7 +204,7 @@ function Field({
         aria-invalid={error ? true : undefined}
         aria-describedby={error ? `${id}-error` : undefined}
         data-cursor="hidden"
-        className={cn(inputBase, error ? "border-red-400/60" : "border-ink-line")}
+        className={cn(inputBase, error ? "border-red-400/60" : "border-line")}
         {...rest}
       />
     </FieldShell>
@@ -235,7 +235,7 @@ function TextareaField({
         className={cn(
           inputBase,
           "resize-y",
-          error ? "border-red-400/60" : "border-ink-line",
+          error ? "border-red-400/60" : "border-line",
         )}
         {...rest}
       />
@@ -257,7 +257,7 @@ function SelectField({
     <div>
       <label
         htmlFor={id}
-        className="mb-2 block font-mono text-[10px] uppercase tracking-[0.16em] text-fog-dim"
+        className="mb-2 block font-mono text-[10px] uppercase tracking-[0.16em] text-muted-2"
       >
         {label}
       </label>
@@ -265,7 +265,7 @@ function SelectField({
         id={id}
         name={name}
         data-cursor="hidden"
-        className={cn(inputBase, "border-ink-line appearance-none")}
+        className={cn(inputBase, "border-line appearance-none")}
       >
         {children}
       </select>

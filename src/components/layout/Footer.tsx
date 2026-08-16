@@ -1,11 +1,11 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { LogoLockup } from "@/components/ui/Logo";
 import { site, footerNav, capabilityStrip } from "@/data/site";
 
 /**
  * Footer.
  *
- * Opens with an oversized wordmark that bleeds to the page edges — the last
+ * Opens with an oversized wordmark that bleeds to the page edges â€” the last
  * thing on screen is the brand at scale, which is where the reference sites
  * spend their final impression too.
  *
@@ -15,17 +15,17 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="tm-grain relative overflow-hidden border-t border-ink-line/60 bg-ink-deep">
+    <footer className="tm-grain relative overflow-hidden border-t border-line/60 bg-paper-deep">
       <div className="tm-grain-layer" aria-hidden />
 
       <div className="tm-shell relative pt-20 sm:pt-28">
-        {/* Capability strip — confirmed brochure footer line */}
-        <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-ink-line/60 pb-8 font-mono text-[11px] uppercase tracking-[0.16em] text-fog-dim">
+        {/* Capability strip â€” confirmed brochure footer line */}
+        <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-line/60 pb-8 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-2">
           {capabilityStrip.map((c) => (
             <li key={c} className="flex items-center gap-5">
               <span>{c}</span>
-              <span aria-hidden className="text-teal-dim">
-                ·
+              <span aria-hidden className="text-muted-2">
+                Â·
               </span>
             </li>
           ))}
@@ -34,10 +34,10 @@ export function Footer() {
         <div className="grid gap-12 py-14 md:grid-cols-12">
           <div className="md:col-span-5">
             <LogoLockup height={48} />
-            <p className="mt-6 max-w-xs text-[15px] leading-relaxed text-fog">
+            <p className="mt-6 max-w-xs text-[15px] leading-relaxed text-muted">
               {site.tagline}
             </p>
-            <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-fog-dim">
+            <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-muted-2">
               {site.positioning}
             </p>
           </div>
@@ -51,7 +51,7 @@ export function Footer() {
                     <Link
                       href={l.href}
                       data-cursor="hover"
-                      className="text-[15px] text-fog transition-colors hover:text-paper"
+                      className="text-[15px] text-muted transition-colors hover:text-ink"
                     >
                       {l.label}
                     </Link>
@@ -68,7 +68,7 @@ export function Footer() {
                 <a
                   href={`mailto:${site.contact.email}`}
                   data-cursor="hover"
-                  className="text-fog transition-colors hover:text-teal-bright"
+                  className="text-muted transition-colors hover:text-accent-text"
                 >
                   {site.contact.email}
                 </a>
@@ -78,9 +78,9 @@ export function Footer() {
                   <a
                     href={p.href}
                     data-cursor="hover"
-                    className="text-fog transition-colors hover:text-teal-bright"
+                    className="text-muted transition-colors hover:text-accent-text"
                   >
-                    <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-fog-dim">
+                    <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-2">
                       {p.region}
                     </span>{" "}
                     {p.value}
@@ -97,7 +97,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     data-cursor="hover"
-                    className="font-mono text-[11px] uppercase tracking-[0.14em] text-fog-dim transition-colors hover:text-teal-bright"
+                    className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-2 transition-colors hover:text-accent-text"
                   >
                     {s.label}
                   </a>
@@ -116,12 +116,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 border-t border-ink-line/60 py-7 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-fog-dim">
-            © {year} {site.name}
+        <div className="flex flex-col gap-3 border-t border-line/60 py-7 sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-2">
+            Â© {year} {site.name}
           </p>
-          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-fog-dim">
-            {site.contact.locations.join(" · ")}
+          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-2">
+            {site.contact.locations.join(" Â· ")}
           </p>
         </div>
       </div>

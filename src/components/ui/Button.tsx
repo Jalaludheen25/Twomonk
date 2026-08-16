@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -11,12 +11,12 @@ const base =
   "group relative inline-flex items-center gap-3 rounded-full font-mono text-[11px] uppercase tracking-[0.16em] transition-colors duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]";
 
 const variants: Record<Variant, string> = {
-  // Teal fill, ink text — the single high-contrast action on any screen.
+  // Teal fill, ink text â€” the single high-contrast action on any screen.
   primary:
-    "bg-teal-bright px-7 py-4 text-ink hover:bg-paper focus-visible:bg-paper",
+    "bg-accent px-7 py-4 text-ink hover:bg-paper focus-visible:bg-paper",
   outline:
-    "border border-ink-line px-7 py-4 text-paper hover:border-teal-bright hover:text-teal-bright",
-  ghost: "px-1 py-2 text-paper hover:text-teal-bright",
+    "border border-line px-7 py-4 text-ink hover:border-accent hover:text-accent-text",
+  ghost: "px-1 py-2 text-ink hover:text-accent-text",
 };
 
 /**

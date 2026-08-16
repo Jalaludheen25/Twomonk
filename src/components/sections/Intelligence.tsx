@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "motion/react";
 import { Eyebrow } from "@/components/ui/Reveal";
@@ -17,7 +17,7 @@ export function Intelligence() {
   return (
     <section
       id="intelligence"
-      className="tm-grain relative overflow-hidden border-t border-ink-line/50 bg-ink-raised/40 py-24 sm:py-32"
+      className="tm-grain relative overflow-hidden border-t border-line/50 bg-surface/40 py-24 sm:py-32"
     >
       <div className="tm-grain-layer" aria-hidden />
 
@@ -39,12 +39,12 @@ export function Intelligence() {
               Make your business <span className="tm-accent">smarter</span>.
             </h2>
           </div>
-          <p className="text-[15px] leading-relaxed text-fog md:col-span-5">
+          <p className="text-[15px] leading-relaxed text-muted md:col-span-5">
             {intelligenceIntro}
           </p>
         </div>
 
-        <ul className="mt-16 grid gap-px overflow-hidden rounded-card bg-ink-line/60 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-16 grid gap-px overflow-hidden rounded-card bg-paper-line/60 sm:grid-cols-2 lg:grid-cols-3">
           {intelligenceCapabilities.map((c, i) => (
             <motion.li
               key={c.index}
@@ -52,19 +52,19 @@ export function Intelligence() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={viewportOnce}
               transition={{ duration: DURATION.base, ease: EASE.expo, delay: i * 0.05 }}
-              className="group relative bg-ink p-7 transition-colors duration-500 hover:bg-ink-raised"
+              className="group relative bg-paper p-7 transition-colors duration-500 hover:bg-surface"
             >
-              <span className="font-mono text-[10px] tracking-[0.16em] text-teal-bright">
+              <span className="font-mono text-[10px] tracking-[0.16em] text-accent-text">
                 {c.index}
               </span>
-              <h3 className="mt-4 font-display text-xl font-semibold text-paper">
+              <h3 className="mt-4 font-display text-xl font-semibold text-ink">
                 {c.name}
               </h3>
-              <p className="mt-3 text-[14px] leading-relaxed text-fog">
+              <p className="mt-3 text-[14px] leading-relaxed text-muted">
                 {c.description}
               </p>
-              <p className="mt-4 border-t border-ink-line/70 pt-4 text-[13px] leading-relaxed text-fog-dim">
-                <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-teal-dim">
+              <p className="mt-4 border-t border-line/70 pt-4 text-[13px] leading-relaxed text-muted-2">
+                <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-muted-2">
                   Example
                 </span>
                 <br />
@@ -74,7 +74,7 @@ export function Intelligence() {
               {/* Bottom rule that draws in on hover */}
               <span
                 aria-hidden
-                className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-teal-bright transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100"
+                className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-accent transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100"
               />
             </motion.li>
           ))}

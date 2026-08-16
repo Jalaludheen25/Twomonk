@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion } from "motion/react";
@@ -14,13 +14,13 @@ import { cn } from "@/lib/utils";
  * detail while the others stay as headlines, so all five pillars are readable
  * at once and the section stays a single confident block.
  *
- * Qualitative only — no invented figures, awards or client counts.
+ * Qualitative only â€” no invented figures, awards or client counts.
  */
 export function WhyTwomonk() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="relative border-t border-ink-line/50 py-24 sm:py-32">
+    <section className="relative border-t border-line/50 py-24 sm:py-32">
       <div className="tm-shell">
         <div className="grid gap-8 md:grid-cols-12 md:items-end">
           <div className="md:col-span-7">
@@ -29,13 +29,13 @@ export function WhyTwomonk() {
               A partner, not a <span className="tm-accent">vendor</span>.
             </h2>
           </div>
-          <p className="text-[15px] leading-relaxed text-fog md:col-span-5">
+          <p className="text-[15px] leading-relaxed text-muted md:col-span-5">
             The mark is two figures standing together. That is the working model:
             we sit alongside the business rather than taking a brief over a wall.
           </p>
         </div>
 
-        <ul className="mt-14 border-t border-ink-line/60">
+        <ul className="mt-14 border-t border-line/60">
           {pillars.map((p, i) => {
             const isActive = i === active;
             return (
@@ -45,7 +45,7 @@ export function WhyTwomonk() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={viewportOnce}
                 transition={{ duration: DURATION.base, ease: EASE.expo, delay: i * 0.05 }}
-                className="border-b border-ink-line/60"
+                className="border-b border-line/60"
                 onMouseEnter={() => setActive(i)}
                 onFocusCapture={() => setActive(i)}
               >
@@ -55,7 +55,7 @@ export function WhyTwomonk() {
                   aria-expanded={isActive}
                   className="grid w-full grid-cols-12 items-start gap-4 py-7 text-left"
                 >
-                  <span className="col-span-2 font-mono text-[10px] tracking-[0.16em] text-teal-bright sm:col-span-1">
+                  <span className="col-span-2 font-mono text-[10px] tracking-[0.16em] text-accent-text sm:col-span-1">
                     {p.index}
                   </span>
 
@@ -63,7 +63,7 @@ export function WhyTwomonk() {
                     <span
                       className={cn(
                         "block font-display text-[clamp(1.5rem,3.4vw,2.5rem)] font-semibold leading-none tracking-[-0.03em] transition-colors duration-500",
-                        isActive ? "text-paper" : "text-fog-dim/60",
+                        isActive ? "text-ink" : "text-muted-2/60",
                       )}
                     >
                       {p.name}
@@ -71,7 +71,7 @@ export function WhyTwomonk() {
                   </span>
 
                   <span className="col-span-12 sm:col-span-7">
-                    <span className="block text-[15px] leading-relaxed text-fog">
+                    <span className="block text-[15px] leading-relaxed text-muted">
                       {p.claim}
                     </span>
                     <motion.span
@@ -83,7 +83,7 @@ export function WhyTwomonk() {
                       transition={{ duration: 0.45, ease: EASE.expo }}
                       className="block overflow-hidden"
                     >
-                      <span className="mt-2.5 block text-[14px] leading-relaxed text-fog-dim">
+                      <span className="mt-2.5 block text-[14px] leading-relaxed text-muted-2">
                         {p.detail}
                       </span>
                     </motion.span>

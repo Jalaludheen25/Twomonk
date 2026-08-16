@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 import { useHasFinePointer, usePrefersReducedMotion } from "@/hooks/useMediaQuery";
@@ -7,9 +7,9 @@ import { useHasFinePointer, usePrefersReducedMotion } from "@/hooks/useMediaQuer
  * Custom cursor: a small teal dot with a trailing ring.
  *
  * Elements opt into states declaratively via `data-cursor`:
- *   data-cursor="hover"  — ring expands
- *   data-cursor="view"   — ring expands and shows a label
- *   data-cursor="hidden" — cursor hides (e.g. over inputs)
+ *   data-cursor="hover"  â€” ring expands
+ *   data-cursor="view"   â€” ring expands and shows a label
+ *   data-cursor="hidden" â€” cursor hides (e.g. over inputs)
  * plus `data-cursor-label="View case"` to set the label text.
  *
  * Positioned with a rAF lerp on transform only, so it never triggers layout.
@@ -86,12 +86,12 @@ export function Cursor() {
     <div aria-hidden className="pointer-events-none fixed inset-0 z-[100]">
       <div
         ref={dotRef}
-        className="fixed left-0 top-0 h-1.5 w-1.5 rounded-full bg-teal-bright transition-opacity duration-200"
+        className="fixed left-0 top-0 h-1.5 w-1.5 rounded-full bg-accent transition-opacity duration-200"
         style={{ opacity: hidden || expanded ? 0 : 1 }}
       />
       <div
         ref={ringRef}
-        className="fixed left-0 top-0 flex items-center justify-center rounded-full border border-teal-bright/70 transition-[width,height,background-color,opacity] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
+        className="fixed left-0 top-0 flex items-center justify-center rounded-full border border-accent/70 transition-[width,height,background-color,opacity] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
         style={{
           width: expanded ? 76 : 30,
           height: expanded ? 76 : 30,
@@ -102,7 +102,7 @@ export function Cursor() {
         }}
       >
         {state === "view" && label ? (
-          <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-teal-bright">
+          <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-accent-text">
             {label}
           </span>
         ) : null}

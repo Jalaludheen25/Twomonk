@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "motion/react";
 import { EASE } from "@/lib/motion";
@@ -6,7 +6,7 @@ import { EASE } from "@/lib/motion";
 /**
  * Shared interior-page hero.
  *
- * Deliberately quieter than the home hero — no WebGL, no full viewport. Inner
+ * Deliberately quieter than the home hero â€” no WebGL, no full viewport. Inner
  * pages are read, not marvelled at, and repeating the 3D on every route would
  * cost load time while diluting the one place it earns its keep.
  *
@@ -73,7 +73,7 @@ export function PageHero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: EASE.expo, delay: 0.4 }}
-            className="mt-8 max-w-xl text-lead text-fog"
+            className="mt-8 max-w-xl text-lead text-muted"
           >
             {intro}
           </motion.p>
