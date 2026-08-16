@@ -1,4 +1,4 @@
-�"use client";
+"use client";
 
 import { useState } from "react";
 import { motion } from "motion/react";
@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
  * detail while the others stay as headlines, so all five pillars are readable
  * at once and the section stays a single confident block.
  *
- * Qualitative only � no invented figures, awards or client counts.
+ * Qualitative only — no invented figures, awards or client counts.
  */
 export function WhyTwomonk() {
   const [active, setActive] = useState(0);

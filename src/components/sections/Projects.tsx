@@ -1,4 +1,4 @@
-�import Link from "next/link";
+import Link from "next/link";
 import { ProjectCard } from "./ProjectCard";
 import { Eyebrow } from "@/components/ui/Reveal";
 import { projects, PROJECTS_ARE_PLACEHOLDER } from "@/data/projects";
@@ -6,7 +6,7 @@ import { projects, PROJECTS_ARE_PLACEHOLDER } from "@/data/projects";
 /**
  * Selected work.
  *
- * Proof beats promises, so this sits high on the page � but only real work
+ * Proof beats promises, so this sits high on the page — but only real work
  * earns that. While the entries are placeholders a build notice is rendered in
  * development so nobody ships them by accident. The notice is stripped from
  * production bundles by the NODE_ENV check.
@@ -30,7 +30,7 @@ export function Projects({ limit }: { limit?: number }) {
               data-cursor="hover"
               className="font-mono text-[11px] uppercase tracking-[0.16em] text-accent-text underline-offset-4 hover:underline"
             >
-              All work � 
+              All work → 
             </Link>
           </div>
         </div>

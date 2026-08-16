@@ -1,4 +1,4 @@
-�"use client";
+"use client";
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform, type MotionValue } from "motion/react";
@@ -8,7 +8,7 @@ import { site } from "@/data/site";
 /**
  * Brand statement.
  *
- * The sentence fills in word by word as the section crosses the viewport �
+ * The sentence fills in word by word as the section crosses the viewport —
  * scroll position drives opacity directly rather than a one-shot animation, so
  * reading pace and scroll pace are the same thing. Dim words stay legible
  * (not invisible), which keeps the sentence readable at any scroll position

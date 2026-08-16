@@ -1,4 +1,4 @@
-�import type { Metadata, Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { fontVariables } from "@/lib/fonts";
 import { site } from "@/data/site";
@@ -11,8 +11,8 @@ import { StructuredData } from "@/components/seo/StructuredData";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} � ${site.tagline}`,
-    template: `%s � ${site.name}`,
+    default: `${site.name} — ${site.tagline}`,
+    template: `%s — ${site.name}`,
   },
   description: site.positioning,
   applicationName: site.name,
@@ -33,14 +33,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: site.name,
-    title: `${site.name} � ${site.tagline}`,
+    title: `${site.name} — ${site.tagline}`,
     description: site.positioning,
     url: site.url,
     locale: "en",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} � ${site.tagline}`,
+    title: `${site.name} — ${site.tagline}`,
     description: site.positioning,
   },
   robots: { index: true, follow: true },

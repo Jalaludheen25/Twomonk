@@ -1,4 +1,4 @@
-�"use client";
+"use client";
 
 import { useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
@@ -8,9 +8,9 @@ import { EASE, DURATION } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 /**
- * Delivery process � the brochure's six steps, given room to breathe.
+ * Delivery process — the brochure's six steps, given room to breathe.
  *
- * Desktop pins the section and steps through Discover �  Optimise as the user
+ * Desktop pins the section and steps through Discover —  Optimise as the user
  * scrolls, with a progress spine on the left. Below `lg` it becomes an ordinary
  * numbered list, because pinning six full-height steps on a phone is a long
  * scroll to nowhere.

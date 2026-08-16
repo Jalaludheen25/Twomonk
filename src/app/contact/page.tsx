@@ -1,4 +1,4 @@
-�import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { PageHero } from "@/components/layout/PageHero";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { Faqs } from "@/components/sections/Faqs";
@@ -94,7 +94,7 @@ export default function ContactPage() {
                       {s.index}
                     </span>
                     <span>
-                      <span className="text-ink">{s.name}</span> � {s.summary}
+                      <span className="text-ink">{s.name}</span> — {s.summary}
                     </span>
                   </li>
                 ))}

@@ -1,4 +1,4 @@
-�"use client";
+"use client";
 
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
@@ -23,8 +23,8 @@ const initialState: EnquiryState = { status: "idle" };
 const BUDGETS = [
   "Not sure yet",
   "Under $5k",
-  "$5k � $15k",
-  "$15k � $50k",
+  "$5k — $15k",
+  "$15k — $50k",
   "$50k+",
 ];
 
@@ -97,7 +97,7 @@ export function ContactForm() {
         error={state.errors?.message}
       />
 
-      {/* Honeypot � visually and semantically hidden from real users */}
+      {/* Honeypot — visually and semantically hidden from real users */}
       <div aria-hidden className="absolute left-[-9999px] h-px w-px overflow-hidden">
         <label htmlFor="website">Website</label>
         <input id="website" name="website" tabIndex={-1} autoComplete="off" />
@@ -110,7 +110,7 @@ export function ContactForm() {
         </p>
       </div>
 
-      {/* Result � announced to assistive tech */}
+      {/* Result — announced to assistive tech */}
       <div aria-live="polite" role="status">
         {state.status !== "idle" && state.message ? (
           <div
@@ -128,7 +128,7 @@ export function ContactForm() {
                 href={state.mailto}
                 className="mt-3 inline-block font-mono text-[11px] uppercase tracking-[0.16em] underline underline-offset-4"
               >
-                Open email with details � 
+                Open email with details → 
               </a>
             ) : null}
           </div>

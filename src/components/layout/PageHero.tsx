@@ -1,4 +1,4 @@
-�"use client";
+"use client";
 
 import { motion } from "motion/react";
 import { EASE } from "@/lib/motion";
@@ -6,7 +6,7 @@ import { EASE } from "@/lib/motion";
 /**
  * Shared interior-page hero.
  *
- * Deliberately quieter than the home hero � no WebGL, no full viewport. Inner
+ * Deliberately quieter than the home hero — no WebGL, no full viewport. Inner
  * pages are read, not marvelled at, and repeating the 3D on every route would
  * cost load time while diluting the one place it earns its keep.
  *

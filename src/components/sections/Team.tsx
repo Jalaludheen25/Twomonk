@@ -1,4 +1,4 @@
-�import Image from "next/image";
+import Image from "next/image";
 import { Eyebrow } from "@/components/ui/Reveal";
 import { team, hasTeam, teamPlaceholderNote } from "@/data/people";
 import { site } from "@/data/site";
@@ -8,7 +8,7 @@ import { site } from "@/data/site";
  *
  * Renders real people when `src/data/people.ts` has them, and a written
  * statement when it doesn't. The brief rules out generic stock portraits, and
- * inventing faces for a company page would be worse than saying nothing � so
+ * inventing faces for a company page would be worse than saying nothing — so
  * the fallback is honest copy rather than five grey silhouettes.
  */
 export function Team() {
