@@ -77,10 +77,14 @@ export function Hero() {
               initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: DURATION.slow, ease: EASE.expo, delay: 0.84 }}
-              className="flex flex-wrap items-center gap-3 md:col-span-6 md:justify-end lg:col-span-7"
+              className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center md:col-span-6 md:justify-end lg:col-span-7"
             >
-              <Button href="/contact">Start a Project</Button>
-              <Button href="/work" variant="outline">
+              {/* Full-width stacked on phones — equal-width targets read as a
+                  deliberate pair rather than two mismatched pills. */}
+              <Button href="/contact" className="justify-center">
+                Start a Project
+              </Button>
+              <Button href="/work" variant="outline" className="justify-center">
                 Explore Our Work
               </Button>
             </motion.div>
@@ -111,10 +115,12 @@ export function Hero() {
             ))}
           </ol>
 
+          {/* Scroll cue is desktop-only: on touch it states the obvious and
+              costs a line of vertical space the hero can't spare. */}
           <a
             href="#statement"
             data-cursor="hover"
-            className="group flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.16em] text-fog-dim transition-colors hover:text-teal-bright"
+            className="group hidden items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.16em] text-fog-dim transition-colors hover:text-teal-bright sm:flex"
           >
             Scroll
             <ArrowDown

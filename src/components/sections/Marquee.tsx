@@ -45,8 +45,17 @@ export function Marquee({
     </ul>
   );
 
+  // Mask is set inline rather than through a utility class: it must apply on
+  // the same element as `overflow-hidden`, and an inline style is the version
+  // guaranteed to survive both vendor prefixing and class ordering.
+  const edgeFade =
+    "linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%)";
+
   return (
-    <div className={cn("tm-marquee tm-edge-fade overflow-hidden", className)}>
+    <div
+      className={cn("tm-marquee overflow-hidden", className)}
+      style={{ WebkitMaskImage: edgeFade, maskImage: edgeFade }}
+    >
       <div
         className="tm-marquee__track flex w-max"
         style={

@@ -2,11 +2,7 @@
 
 import { motion } from "motion/react";
 import { Eyebrow } from "@/components/ui/Reveal";
-import {
-  intelligenceCapabilities,
-  intelligenceHeadline,
-  intelligenceIntro,
-} from "@/data/intelligence";
+import { intelligenceCapabilities, intelligenceIntro } from "@/data/intelligence";
 import { EASE, DURATION, viewportOnce } from "@/lib/motion";
 
 /**
@@ -84,9 +80,6 @@ export function Intelligence() {
           ))}
         </ul>
 
-        <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.16em] text-fog-dim">
-          {intelligenceHeadline}
-        </p>
       </div>
     </section>
   );
