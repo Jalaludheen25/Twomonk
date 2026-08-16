@@ -1,25 +1,33 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useSyncExternalStore } from "react";
 
 /**
  * SSR-safe media query hook.
- * Starts `false` on the server and syncs on mount, so nothing that depends on
- * viewport size can cause a hydration mismatch.
+ *
+ * Built on `useSyncExternalStore` rather than useState + useEffect. matchMedia
+ * is precisely the "external store" that API exists for: the server snapshot is
+ * always `false`, the client subscribes to the real MediaQueryList, and React
+ * reads it during render — so there is no cascading re-render on mount and no
+ * torn state between the two.
  */
 export function useMediaQuery(query: string) {
-  const [matches, setMatches] = useState(false);
+  const subscribe = useCallback(
+    (onChange: () => void) => {
+      const mql = window.matchMedia(query);
+      mql.addEventListener("change", onChange);
+      return () => mql.removeEventListener("change", onChange);
+    },
+    [query],
+  );
 
-  useEffect(() => {
-    const mql = window.matchMedia(query);
-    setMatches(mql.matches);
+  const getSnapshot = useCallback(() => window.matchMedia(query).matches, [query]);
 
-    const onChange = (e: MediaQueryListEvent) => setMatches(e.matches);
-    mql.addEventListener("change", onChange);
-    return () => mql.removeEventListener("change", onChange);
-  }, [query]);
+  // The server has no viewport and no user preferences; `false` keeps the
+  // first client render identical to the server HTML.
+  const getServerSnapshot = useCallback(() => false, []);
 
-  return matches;
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 }
 
 /** True when the user has asked for reduced motion. */

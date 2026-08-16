@@ -143,7 +143,7 @@ const fragmentShader = /* glsl */ `
 `;
 
 function Strands({ pointer }: { pointer: React.RefObject<{ x: number; y: number }> }) {
-  const geometry = useMemo(buildGeometry, []);
+  const geometry = useMemo(() => buildGeometry(), []);
   const points = useRef<THREE.Points>(null);
   const material = useRef<THREE.ShaderMaterial>(null);
   const { size, viewport } = useThree();

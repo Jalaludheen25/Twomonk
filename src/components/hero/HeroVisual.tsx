@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { usePrefersReducedMotion } from "@/hooks/useMediaQuery";
+import { useWebGLSupport } from "@/hooks/useWebGLSupport";
 
 /**
  * Loads the WebGL hero only when it is actually wanted:
@@ -17,21 +17,6 @@ const HeroScene = dynamic(() => import("./HeroScene"), {
   ssr: false,
   loading: () => <StaticVisual />,
 });
-
-/** Cheap one-off WebGL capability probe. */
-function detectWebGL() {
-  if (typeof window === "undefined") return false;
-  try {
-    const canvas = document.createElement("canvas");
-    return Boolean(
-      canvas.getContext("webgl2") ??
-        canvas.getContext("webgl") ??
-        canvas.getContext("experimental-webgl"),
-    );
-  } catch {
-    return false;
-  }
-}
 
 /**
  * Two offset radial fields in the brand's navy and teal, echoing the two
