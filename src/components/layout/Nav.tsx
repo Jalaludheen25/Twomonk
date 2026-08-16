@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
@@ -24,7 +24,19 @@ export function Nav() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
-  const [open, setOpen] = useState(false);
+
+  /*
+   * The menu stores the route it was opened on rather than a boolean, so
+   * navigating away closes it as a derived value. An effect watching
+   * `pathname` would do the same thing via an extra render pass — this needs
+   * no effect at all.
+   */
+  const [openedOn, setOpenedOn] = useState<string | null>(null);
+  const open = openedOn === pathname;
+  const setOpen = useCallback(
+    (next: boolean) => setOpenedOn(next ? pathname : null),
+    [pathname],
+  );
 
   useEffect(() => {
     let lastY = window.scrollY;
@@ -47,15 +59,14 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close on route change.
-  useEffect(() => setOpen(false), [pathname]);
-
   // Lock body scroll and close on Escape while the overlay is open.
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpenedOn(null);
+    };
     window.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = prev;

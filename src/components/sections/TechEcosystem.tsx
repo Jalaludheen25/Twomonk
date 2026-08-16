@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import { Marquee } from "./Marquee";
 import { Eyebrow, Reveal } from "@/components/ui/Reveal";
 import { techCategories, techMarquee } from "@/data/technologies";
-import { EASE, DURATION, viewportOnce } from "@/lib/motion";
+import { EASE, DURATION } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 /**

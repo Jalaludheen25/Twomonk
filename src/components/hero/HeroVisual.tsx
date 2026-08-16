@@ -54,9 +54,7 @@ function StaticVisual({ intensity = 1 }: { intensity?: number }) {
 
 export function HeroVisual() {
   const reduced = usePrefersReducedMotion();
-  const [webgl, setWebgl] = useState<boolean | null>(null);
-
-  useEffect(() => setWebgl(detectWebGL()), []);
+  const webgl = useWebGLSupport();
 
   /*
    * Placement matters more than the shader here. Centred behind the headline,
@@ -65,7 +63,7 @@ export function HeroVisual() {
    * is also the composition of the logo itself. On small screens it drops
    * behind the content at low opacity, purely as atmosphere.
    */
-  const useCanvas = webgl !== null && !reduced && webgl;
+  const useCanvas = webgl && !reduced;
 
   return (
     <div
