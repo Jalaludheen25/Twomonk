@@ -106,9 +106,7 @@ export function Nav() {
                   // Services gets a mega-menu; every other link stays a plain
                   // roll-over label.
                   if (item.href === "/services") {
-                    return (
-                      <ServicesDropdown key={item.href} active={active} isCurrent={active} />
-                    );
+                    return <ServicesDropdown key={item.href} isCurrent={active} />;
                   }
 
                   return (

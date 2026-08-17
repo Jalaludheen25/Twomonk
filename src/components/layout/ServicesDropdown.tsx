@@ -18,13 +18,7 @@ import { EASE, DURATION } from "@/lib/motion";
  * pointer "over" a descendant of the trigger the whole way, so there's no
  * dead zone that closes the menu mid-travel.
  */
-export function ServicesDropdown({
-  active,
-  isCurrent,
-}: {
-  active: boolean;
-  isCurrent: boolean;
-}) {
+export function ServicesDropdown({ isCurrent }: { isCurrent: boolean }) {
   const [open, setOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
