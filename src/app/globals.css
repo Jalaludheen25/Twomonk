@@ -232,6 +232,63 @@
 }
 
 /* ==========================================================================
+   CARD SYSTEM
+   One shared treatment for every raised surface on the site: white panel,
+   hairline border, soft tinted shadow, gentle lift on hover. Using a single
+   class everywhere is what makes the page read as one designed system rather
+   than a set of independently-styled sections.
+   ========================================================================== */
+
+.tm-card {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-cell);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 0.5s var(--ease-expo),
+    box-shadow 0.5s var(--ease-expo),
+    border-color 0.5s var(--ease-expo);
+}
+
+.tm-card--interactive:hover,
+.tm-card--interactive:focus-within {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-line-strong);
+}
+
+/* ==========================================================================
+   BENTO GRID
+   Explicit row height rather than auto-rows: a row-spanning cell needs a
+   fixed track size to align cleanly against the single-row cells beside it.
+   Five items only — one hero cell (2 cols × 2 rows) plus four equal cells —
+   which is exactly what the underlying pillar data provides.
+   ========================================================================== */
+
+.tm-bento {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.tm-bento__hero {
+  grid-column: span 1;
+}
+
+@media (min-width: 640px) {
+  .tm-bento {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 180px;
+    gap: 1.25rem;
+  }
+  .tm-bento__hero {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+/* ==========================================================================
    WORD REVEAL
    Per-word entrance, matching the reference's technique: ordinary words rise
    on a stagger, while a single accent word blooms out of blur and scale with
