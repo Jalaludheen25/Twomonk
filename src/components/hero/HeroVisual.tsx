@@ -69,7 +69,11 @@ export function HeroVisual() {
 
   return (
     <div
-      className="pointer-events-none absolute inset-y-0 right-0 w-full opacity-55 [mask-image:radial-gradient(78%_78%_at_50%_50%,#000_32%,transparent_74%)] sm:opacity-75 lg:left-auto lg:w-[48%] lg:opacity-100"
+      /* On phones the form sits behind the headline rather than beside it, so
+         it drops to a faint texture — navy points over navy type would cost
+         legibility for no gain. It only reaches full strength at `lg`, where
+         it has its own column. */
+      className="pointer-events-none absolute inset-y-0 right-0 w-full opacity-[0.22] [mask-image:radial-gradient(78%_78%_at_50%_50%,#000_32%,transparent_74%)] sm:opacity-40 lg:left-auto lg:w-[48%] lg:opacity-100"
       aria-hidden
     >
       {useCanvas ? (

@@ -155,25 +155,26 @@ idea rising into growth.
 
 Driven through a real Chromium session (`agent-browser`), not assumed.
 
-**Responsive sweep — 30 combinations, zero horizontal overflow:**
+**On the dark build, before the light rebuild** — a full sweep of 30
+combinations (4K / 1920 / 1280 / 768 / 390 / 320 × five routes) returned zero
+horizontal overflow on every one. Layout is token- and CSS-driven and did not
+change structurally in the rebuild, so those results still describe the grid.
 
-| Viewport | `/` | `/services` | `/work` | `/about` | `/contact` |
-|---|---|---|---|---|---|
-| 4K 3840×2160 | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Desktop 1920×1080 | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Laptop 1280×800 | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Tablet 768×1024 | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Mobile 390×844 | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Small 320×568 | ✓ | ✓ | ✓ | ✓ | ✓ |
+**Re-verified after the light rebuild:** desktop 1440×900 and small mobile
+320×568 — overflow `0`, zero page errors, blob buttons and word-bloom running,
+logo legible on paper. The intermediate widths were **not** re-run: the browser
+tool became unreliable late in the session. Worth a manual pass at 768 and 1280.
 
-**Also verified:** zero console/page errors · no hydration mismatches ·
-reduced-motion drops WebGL and Lenis while leaving all content at opacity 1 ·
-mobile menu opens, traps scroll, closes via button and Escape ·
+**Also verified (dark build, unchanged by the rebuild):** no hydration
+mismatches · reduced-motion drops WebGL and Lenis while leaving all content at
+opacity 1 · mobile menu opens, locks scroll, closes via button and Escape ·
 all 9 routes 200 with unique title/description/canonical, exactly one `<h1>`,
-zero images missing `alt` · `next build` and `eslint` both clean.
+zero images missing `alt`.
 
-**Not done:** no Lighthouse run, and no testing on real hardware or in
-Safari/Firefox — everything above is Chromium at simulated viewports.
+`next build`, `tsc --noEmit` and `eslint` are all clean.
+
+**Not done:** no Lighthouse run; no Safari/Firefox or real-hardware testing;
+intermediate viewports not re-checked post-rebuild.
 
 ---
 
