@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { LogoLink, LogoLockup } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
+import { ServicesDropdown } from "./ServicesDropdown";
 import { primaryNav, navCta, site } from "@/data/site";
 import { EASE, DURATION } from "@/lib/motion";
 import { cn } from "@/lib/utils";
@@ -101,6 +102,15 @@ export function Nav() {
                     item.href === "/"
                       ? pathname === "/"
                       : pathname.startsWith(item.href);
+
+                  // Services gets a mega-menu; every other link stays a plain
+                  // roll-over label.
+                  if (item.href === "/services") {
+                    return (
+                      <ServicesDropdown key={item.href} active={active} isCurrent={active} />
+                    );
+                  }
+
                   return (
                     <li key={item.href}>
                       <Link

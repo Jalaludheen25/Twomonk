@@ -44,7 +44,7 @@ export function Intelligence() {
           </p>
         </div>
 
-        <ul className="mt-16 grid gap-px overflow-hidden rounded-card bg-line/60 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {intelligenceCapabilities.map((c, i) => (
             <motion.li
               key={c.index}
@@ -52,7 +52,7 @@ export function Intelligence() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={viewportOnce}
               transition={{ duration: DURATION.base, ease: EASE.expo, delay: i * 0.05 }}
-              className="group relative bg-paper p-7 transition-colors duration-500 hover:bg-surface"
+              className="tm-card tm-card--interactive rounded-cell p-7"
             >
               <span className="font-mono text-[10px] tracking-[0.16em] text-accent-text">
                 {c.index}
@@ -70,12 +70,6 @@ export function Intelligence() {
                 <br />
                 {c.example}
               </p>
-
-              {/* Bottom rule that draws in on hover */}
-              <span
-                aria-hidden
-                className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-accent transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100"
-              />
             </motion.li>
           ))}
         </ul>
