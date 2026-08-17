@@ -36,21 +36,31 @@ the six-step process, both phone numbers, email, website, and both social handle
 
 ## Design system
 
-Derived from the real brand assets, not guessed.
+Derived from the real brand assets, not guessed. Colours were sampled directly
+from the pixels of `logos/Two Monk Logo Colour.png`.
 
-**Colour** — sampled directly from `logos/Two Monk Logo Colour.png`:
+The site is **light "paper"** — matching the brochure stock and the editorial
+weight of the benchmark references.
 
-| Token | Value | Use |
-|---|---|---|
-| `navy` | `#002C54` | brand primary (from logo) |
-| `teal` | `#009F9D` | brand accent (from logo) |
-| `ink` | `#00121F` | page background — navy driven to near-black |
-| `ink-raised` / `ink-line` | `#041B2D` / `#0A3049` | surfaces, hairlines |
-| `paper` | `#F2F6F9` | off-white, matches the brochure stock |
-| `teal-bright` | `#14D6CF` | accents on dark — 10.4:1 contrast |
-| `fog` / `fog-dim` | `#8FA6B8` / `#5A7285` | secondary / tertiary text — 7.5:1 |
+| Token | Value | Use | Contrast on paper |
+|---|---|---|---|
+| `paper` | `#F4F7F9` | page background | — |
+| `surface` | `#FFFFFF` | raised cards | — |
+| `paper-deep` | `#E7EEF4` | alternating bands, footer | — |
+| `ink` | `#002C54` | primary text — **brand navy** | **12.6:1** |
+| `muted` | `#47617A` | secondary text | 5.98:1 |
+| `muted-2` | `#55708A` | tertiary / captions | 4.79:1 |
+| `line` | `#D5E1EA` | hairlines | — |
+| `accent` | `#009F9D` | **brand teal** — fills, graphics | 3.03:1 (large only) |
+| `accent-text` | `#007573` | teal at 11px label sizes | **5.15:1** |
+| `accent-hot` | `#2FD4D0` | hover blob fill | 7.7:1 vs ink |
 
-All text pairings meet WCAG AA; `fog` on `ink` also clears AAA.
+The accent exists as two values on purpose: one teal cannot both sit behind
+white text and pass AA at 11px on paper. `accent` fills, `accent-text` labels.
+
+Every text pairing meets WCAG AA. The only sub-4.5 value (`accent` at 3.03:1)
+is used exclusively for large display type and non-text graphics, where the
+3:1 threshold applies.
 
 **Type**
 
