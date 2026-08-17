@@ -66,7 +66,15 @@
   --spacing-gutter: clamp(1.25rem, 5vw, 5rem);
   --container-shell: 96rem;
 
-  --radius-card: 1.25rem;
+  --radius-card: 1.25rem; /* large panels — project frames, dropdown */
+  --radius-cell: 1rem; /* smaller grid cells — bento, tech, intelligence */
+
+  /* Soft, large-blur, negative-spread shadows tinted with brand navy rather
+     than plain black — this is the specific shadow shape ("0 Npx Mpx -Kpx")
+     that reads as premium instead of a flat drop-shadow. Two stops: resting
+     and hover, so lift always has somewhere further to go. */
+  --shadow-card: 0 20px 44px -26px rgba(0, 44, 84, 0.22);
+  --shadow-card-hover: 0 30px 60px -22px rgba(0, 44, 84, 0.3);
 }
 
 @theme inline {

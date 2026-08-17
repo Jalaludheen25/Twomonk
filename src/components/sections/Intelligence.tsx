@@ -44,7 +44,7 @@ export function Intelligence() {
           </p>
         </div>
 
-        <ul className="mt-16 grid gap-px overflow-hidden rounded-card bg-paper-line/60 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-16 grid gap-px overflow-hidden rounded-card bg-line/60 sm:grid-cols-2 lg:grid-cols-3">
           {intelligenceCapabilities.map((c, i) => (
             <motion.li
               key={c.index}

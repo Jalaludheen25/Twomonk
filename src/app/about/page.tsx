@@ -51,7 +51,7 @@ export default function AboutPage() {
 
       {/* Mission & Vision — verbatim from the brochure */}
       <section className="border-t border-line/50 py-20 sm:py-28">
-        <div className="tm-shell grid gap-px overflow-hidden rounded-card bg-paper-line/60 md:grid-cols-2">
+        <div className="tm-shell grid gap-px overflow-hidden rounded-card bg-line/60 md:grid-cols-2">
           {[
             { label: "Our mission", body: site.mission },
             { label: "Our vision", body: site.vision },
@@ -118,7 +118,7 @@ export default function AboutPage() {
           <h2 className="mt-8 font-display text-h2 font-semibold">
             Five areas. One <span className="tm-accent">team</span>.
           </h2>
-          <ul className="mt-12 grid gap-px overflow-hidden rounded-card bg-paper-line/60 sm:grid-cols-2 lg:grid-cols-5">
+          <ul className="mt-12 grid gap-px overflow-hidden rounded-card bg-line/60 sm:grid-cols-2 lg:grid-cols-5">
             {capabilities.map((c) => (
               <li key={c.id} className="bg-paper p-6">
                 <span className="font-mono text-[10px] tracking-[0.16em] text-accent-text">

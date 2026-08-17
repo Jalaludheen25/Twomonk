@@ -119,7 +119,7 @@ function PinnedProcess() {
             </div>
           </div>
 
-          <div className="mt-14 h-px w-full bg-paper-line">
+          <div className="mt-14 h-px w-full bg-line">
             <motion.div
               className="h-px origin-left bg-accent"
               style={{ scaleX: scrollYProgress }}

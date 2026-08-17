@@ -105,7 +105,7 @@ function PinnedEcosystem() {
               </ul>
 
               {/* Progress rail */}
-              <div className="mt-8 h-px w-full bg-paper-line">
+              <div className="mt-8 h-px w-full bg-line">
                 <motion.div
                   className="h-px origin-left bg-accent"
                   style={{ scaleX: scrollYProgress }}

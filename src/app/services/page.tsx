@@ -132,7 +132,7 @@ export default function ServicesPage() {
             areas above expand on these.
           </p>
 
-          <ul className="mt-12 grid gap-px overflow-hidden rounded-card bg-paper-line/60 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-12 grid gap-px overflow-hidden rounded-card bg-line/60 sm:grid-cols-2 lg:grid-cols-3">
             {brochureServices.map((s) => (
               <li key={s.index} className="bg-paper p-7">
                 <span className="font-mono text-[10px] tracking-[0.16em] text-accent-text">

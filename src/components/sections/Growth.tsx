@@ -33,7 +33,7 @@ export function Growth() {
         </div>
 
         {/* The loop */}
-        <ol className="mt-16 grid gap-px overflow-hidden rounded-card bg-paper-line/60 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="mt-16 grid gap-px overflow-hidden rounded-card bg-line/60 sm:grid-cols-2 lg:grid-cols-4">
           {growthLoop.map((s, i) => (
             <motion.li
               key={s.name}
