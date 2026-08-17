@@ -33,9 +33,9 @@ export default function InsightsPage() {
       <section className="border-t border-line/50 py-16 sm:py-24">
         <div className="tm-shell">
           <Eyebrow>Topics</Eyebrow>
-          <ul className="mt-8 grid gap-px overflow-hidden rounded-card bg-line/60 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {insightCategories.map((c) => (
-              <li key={c.id} className="bg-paper p-7">
+              <li key={c.id} className="tm-card tm-card--interactive rounded-cell p-7">
                 <h2 className="font-display text-xl font-semibold text-ink">
                   {c.name}
                 </h2>

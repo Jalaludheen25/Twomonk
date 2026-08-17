@@ -33,7 +33,7 @@ export function Growth() {
         </div>
 
         {/* The loop */}
-        <ol className="mt-16 grid gap-px overflow-hidden rounded-card bg-line/60 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {growthLoop.map((s, i) => (
             <motion.li
               key={s.name}
@@ -41,7 +41,7 @@ export function Growth() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={viewportOnce}
               transition={{ duration: DURATION.base, ease: EASE.expo, delay: i * 0.07 }}
-              className="relative bg-paper p-7"
+              className="tm-card tm-card--interactive rounded-cell p-7"
             >
               <div className="flex items-center justify-between">
                 <span className="font-mono text-[10px] tracking-[0.16em] text-accent-text">

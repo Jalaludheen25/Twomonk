@@ -69,10 +69,10 @@ export function TechEcosystem() {
           ))}
         </div>
 
-        <div className="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {shown.map((cat, i) => (
             <Reveal key={cat.id} delay={i * 0.04}>
-              <div className="border-t border-line/60 pt-5">
+              <div className="tm-card tm-card--interactive rounded-cell p-6">
                 <h3 className="font-mono text-[11px] uppercase tracking-[0.16em] text-accent-text">
                   {cat.name}
                 </h3>

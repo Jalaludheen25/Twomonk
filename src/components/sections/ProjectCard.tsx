@@ -52,7 +52,7 @@ export function ProjectCard({
               hover. Because both happen inside the clip, nothing reflows and
               neighbouring cards never shift. `scale-110` gives the parallax
               travel somewhere to go without exposing an edge. */}
-          <div className="aspect-[16/10] w-full overflow-hidden rounded-card border border-line/70">
+          <div className="aspect-[16/10] w-full overflow-hidden rounded-card border border-line/70 shadow-[var(--shadow-card)] transition-shadow duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:shadow-[var(--shadow-card-hover)]">
             <div className="h-full w-full transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05]">
               <Parallax distance={54} className="h-full w-full">
                 <div className="h-full w-full scale-110">
