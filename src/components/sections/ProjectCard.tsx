@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { ProjectCover } from "./ProjectCover";
+import { Parallax } from "@/components/ui/Parallax";
 import type { Project } from "@/data/projects";
 import { EASE, DURATION, viewportOnce } from "@/lib/motion";
 import { cn } from "@/lib/utils";
@@ -47,24 +48,32 @@ export function ProjectCard({
             flip && "lg:order-2",
           )}
         >
+          {/* The frame is fixed; the art inside drifts on scroll and scales on
+              hover. Because both happen inside the clip, nothing reflows and
+              neighbouring cards never shift. `scale-110` gives the parallax
+              travel somewhere to go without exposing an edge. */}
           <div className="aspect-[16/10] w-full overflow-hidden rounded-card border border-line/70">
-            <div className="h-full w-full transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.045]">
-              {project.cover ? (
-                <Image
-                  src={project.cover}
-                  alt={`${project.name} — ${project.industry}`}
-                  width={1200}
-                  height={750}
-                  className="h-full w-full object-cover"
-                  sizes="(max-width: 1024px) 100vw, 58vw"
-                />
-              ) : (
-                <ProjectCover
-                  slug={project.slug}
-                  accent={project.accent}
-                  index={index}
-                />
-              )}
+            <div className="h-full w-full transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05]">
+              <Parallax distance={54} className="h-full w-full">
+                <div className="h-full w-full scale-110">
+                  {project.cover ? (
+                    <Image
+                      src={project.cover}
+                      alt={`${project.name} — ${project.industry}`}
+                      width={1200}
+                      height={750}
+                      className="h-full w-full object-cover"
+                      sizes="(max-width: 1024px) 100vw, 58vw"
+                    />
+                  ) : (
+                    <ProjectCover
+                      slug={project.slug}
+                      accent={project.accent}
+                      index={index}
+                    />
+                  )}
+                </div>
+              </Parallax>
             </div>
           </div>
 

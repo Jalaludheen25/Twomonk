@@ -74,6 +74,30 @@ is used exclusively for large display type and non-text graphics, where the
 `expo (0.16,1,0.3,1)` for reveals · `in-out (0.65,0,0.35,1)` for state ·
 `back (0.34,1.56,0.64,1)` for magnetic pops.
 
+### Signature interactions
+
+Three techniques carry most of the premium feel. All three were reverse-engineered
+from the benchmark reference's own CSS and GSAP, then rebuilt for TwoMonk.
+
+**1. Accent-word bloom** (`components/hero/WordReveal.tsx`)
+Headline words rise individually on a `0.075s` stagger — but the accent word
+starts at `scale(1.55) rotate(-2deg) blur(18px)` and resolves into focus with a
+teal glow that then decays over 2.2s. One word behaving differently from the
+rest is what turns an entrance into a moment. Initial state lives in CSS
+(`.tm-word`) so finished type never flashes before the timeline starts.
+
+**2. Blob buttons** (`.tm-blob` in globals.css)
+A 1.4rem dot parked in the button's left padding expands to flood the whole
+pill on hover while the label inverts. The asymmetric padding (`pl-14 pr-9`) is
+what makes room for the resting dot. Pure CSS on a `::before` behind the
+content, so it runs on the compositor and never repaints text.
+
+**3. Scrub-linked scroll**
+The reference pins almost nothing — one `pin: true` on its entire home page —
+and instead ties motion continuously to scroll position (`scrub: 0.8`–`1.2`).
+Pinning is used here only where a section genuinely steps through states
+(services, process), and it is desktop-only.
+
 ---
 
 ## Architecture
