@@ -15,8 +15,8 @@ export default function WorkPage() {
     <>
       <PageHero
         eyebrow="Work"
-        lines={["Proof over", "promises."]}
-        accentWord="promises."
+        lines={["What we've", "actually shipped."]}
+        accentWord="shipped."
         intro="Every engagement starts with understanding the business and ends with something measurable. Here is what that looks like in practice."
       />
       <Projects />
