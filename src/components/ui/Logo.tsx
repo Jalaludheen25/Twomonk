@@ -37,6 +37,35 @@ export function LogoMark({
   );
 }
 
+/**
+ * Letter-style wordmark — the rounded two-line "two / monk" logotype, cropped
+ * from the supplied master (which also carries a third "Innovations" line at
+ * full size). The crop drops that third line: at compact header height a
+ * third line would shrink to an illegible sliver, so the two-line crop is
+ * what actually reads at nav scale. See `scripts/crop-letter-logo.mjs` if the
+ * source master ever needs re-cropping.
+ */
+export function LogoWordmarkLetter({
+  className,
+  height = 34,
+}: {
+  className?: string;
+  height?: number;
+}) {
+  // Crop is 2071 × 1004 → aspect 2.063
+  const width = Math.round(height * 2.063);
+  return (
+    <Image
+      src="/logos/twomonk-logo-letter-2line.png"
+      alt={site.name}
+      width={width}
+      height={height}
+      priority
+      className={className}
+    />
+  );
+}
+
 /** Full lockup: mark + wordmark. Used in the footer and the mobile menu. */
 export function LogoLockup({
   className,
@@ -61,13 +90,15 @@ export function LogoLockup({
   );
 }
 
-/** Clickable home link wrapping the compact mark plus the name. */
+/** Clickable home link wrapping the compact mark plus the wordmark. */
 export function LogoLink({
   className,
   markSize = 30,
+  wordmarkHeight = 34,
 }: {
   className?: string;
   markSize?: number;
+  wordmarkHeight?: number;
 }) {
   return (
     <Link
@@ -80,10 +111,10 @@ export function LogoLink({
         size={markSize}
         className="transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-0.5"
       />
-      <span className="font-display text-[15px] font-semibold leading-none tracking-[-0.02em] text-ink">
-        {site.shortName}
-        <span className="text-accent-text">.</span>
-      </span>
+      <LogoWordmarkLetter
+        height={wordmarkHeight}
+        className="transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-0.5"
+      />
     </Link>
   );
 }
