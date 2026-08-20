@@ -53,6 +53,11 @@ export const site = {
     locations: ["UAE", "India"],
     social: [
       {
+        label: "LinkedIn",
+        handle: "suno-ads",
+        href: "https://www.linkedin.com/company/suno-ads/posts/?feedView=all",
+      },
+      {
         label: "Instagram",
         handle: "twomonkinnovations",
         href: "https://instagram.com/twomonkinnovations",
@@ -63,7 +68,9 @@ export const site = {
         href: "https://facebook.com/twomonkinnovations",
       },
     ],
-    // NEEDS CONFIRMATION — no LinkedIn or street address appears in the brochure.
+    // NEEDS CONFIRMATION — no street address appears in the brochure.
+    // LinkedIn confirmed directly by the client; the company page is under
+    // the "suno-ads" slug, not "twomonk" — confirmed intentional, not a typo.
   },
 
   url: "https://www.twomonk.com",

@@ -38,25 +38,26 @@ export function LogoMark({
 }
 
 /**
- * Letter-style wordmark — the rounded two-line "two / monk" logotype, cropped
- * from the supplied master (which also carries a third "Innovations" line at
- * full size). The crop drops that third line: at compact header height a
- * third line would shrink to an illegible sliver, so the two-line crop is
- * what actually reads at nav scale. See `scripts/crop-letter-logo.mjs` if the
- * source master ever needs re-cropping.
+ * Letter-style wordmark — the rounded three-line "two / monk / Innovations"
+ * logotype. Sized deliberately taller than a typical nav logo: at compact
+ * header height the "Innovations" line shrinks to an illegible sliver, so
+ * this needs real height to keep all three lines readable. See
+ * `scripts/crop-letter-logo.mjs` for the trimmed source; a two-line variant
+ * (`twomonk-logo-letter-2line.png`, drops "Innovations") also exists if a
+ * more compact mark is ever needed somewhere space-constrained.
  */
 export function LogoWordmarkLetter({
   className,
-  height = 34,
+  height = 48,
 }: {
   className?: string;
   height?: number;
 }) {
-  // Crop is 2071 × 1004 → aspect 2.063
-  const width = Math.round(height * 2.063);
+  // Full crop is 2071 × 1350 → aspect 1.534
+  const width = Math.round(height * 1.534);
   return (
     <Image
-      src="/logos/twomonk-logo-letter-2line.png"
+      src="/logos/twomonk-logo-letter-full.png"
       alt={site.name}
       width={width}
       height={height}
@@ -93,8 +94,8 @@ export function LogoLockup({
 /** Clickable home link wrapping the compact mark plus the wordmark. */
 export function LogoLink({
   className,
-  markSize = 30,
-  wordmarkHeight = 34,
+  markSize = 42,
+  wordmarkHeight = 48,
 }: {
   className?: string;
   markSize?: number;
